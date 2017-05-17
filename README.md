@@ -125,6 +125,14 @@ intent.setAction(getPackageName() + Brick.BROADCAST_FILTER_SDK);
 intent.putExtra(Brick.KEY_MERCHANT_SUCCESS, backendResult);
 LocalBroadcastManager.getInstance(MerchantBackendService.this).sendBroadcast(intent);
 ```
+### CardIO plugin
+You can let users using their phone camera to scan credit card for number, CVV, expired date automatically by compiling our cardIO plugin. Just add some lines in your app module's build.gradle file:
+```java
+compile (project(':card.io-release')){
+        transitive = true;
+    }
+```
+
 ### Add Mint payment method
 ```java
 request.addMint();
@@ -199,6 +207,7 @@ public ExternalPs(String id , String displayName, int iconResId, Serializable pa
 ```displayName```: label of the ps displayed on the button.
 ```iconResId```: PS logo resource id.,
 ```Params```: parameters object passed to core sdk (varies among different PS).
+Add external ps object to UnifiedRequest object.
 ```java
 request.add(ps1, ps2,...);
 ```
