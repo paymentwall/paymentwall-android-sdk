@@ -142,6 +142,15 @@ request.addMint();
 ```java
 request.addMobiamo();
 ```
+### Add PwLocal payment method
+Firstly, you have to create a [PwLocal request](https://www.paymentwall.com/en/documentation/PWLocal-Android-SDK/3018#create-a-request). Then set it to UnifiedRequest object:
+```java
+request.setPwlocalRequest(customRequest);
+```
+Finally, enable PwLocal option:
+```java
+request.addPwLocal();
+```
 ### Set item image for the request
 There are some data types of an item’s image you can pass to Paymentwall SDK. You can choose one in 4 below options:
 ```java
