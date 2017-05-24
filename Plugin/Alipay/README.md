@@ -1,12 +1,19 @@
 # Alipay integration instruction
 
 ## Step 1
-Copy alipay sdk jar file to ‘libs’ folder in the app directory.
+### Android Studio
+Copy alipay sdk jar file to 'libs' folder in the app directory.
 
 ![](../../static/add_alipay_lib.png) 
+### Eclipse
+Copy alipaysdk and alipayadapter-release jar files to 'libs' folder in the project directory
+
+![](../../static/add_alipay_lib_eclipse.png) 
+
 
 ## Step 2
-Add this line to your app module’s build.gradle file:
+### Android Studio
+Import alipayadapter-release.aar as a module into your project. After that, add this line to your app module's build.gradle file:
 ```java
 compile project(':alipayadapter-release')
 ```
