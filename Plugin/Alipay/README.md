@@ -62,7 +62,7 @@ If Paymentwall secret key is not presented, you have to generate signature for d
 alipay.setPwSign(genPwSignature());
 ```
 
-Signature generation instruction can be referred here.
+Signature generation instruction can be referred [here](https://paymentwall.github.io/signature-calculation).
 
 
 ## Step 5
