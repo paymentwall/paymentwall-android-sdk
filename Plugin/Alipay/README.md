@@ -50,9 +50,9 @@ And with international account:
 ```java
 alipay.setAppId(Constants.ALIPAY.APP_ID);
 alipay.setPaymentType("1");
-alipayInternaltional.setItbPay("30m");
-alipayInternaltional.setForexBiz("FP");
-alipayInternaltional.setAppenv("system=android^version=3.0.1.2");
+alipay.setItbPay("30m");
+alipay.setForexBiz("FP");
+alipay.setAppenv("system=android^version=3.0.1.2");
 ```
 If Paymentwall secret key is not presented, you have to generate signature for digital goods api by yourself and set it to PsAlipay object:
 ```java
