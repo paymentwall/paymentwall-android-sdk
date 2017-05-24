@@ -40,6 +40,9 @@ Initialize an instance of PsAlipay object (after UnifiedRequest object initializ
 UnifiedRequest request = new UnifiedRequest();
 request.setPwProjectKey(Constants.PW_PROJECT_KEY);
 request.setPwSecretKey(Constants.PW_SECRET_KEY);
+...
+
+PsAlipay alipay = new PsAlipay();
 ```
 With domestic account, those attributes must be set:
 ```java
