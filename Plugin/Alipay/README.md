@@ -33,10 +33,6 @@ Initialize an instance of PsAlipay object (after UnifiedRequest object initializ
 UnifiedRequest request = new UnifiedRequest();
 request.setPwProjectKey(Constants.PW_PROJECT_KEY);
 request.setPwSecretKey(Constants.PW_SECRET_KEY);
-...
-
-PsWechat wechat = new PsWechat();
-wechat.setTradeType("APP");
 ```
 With domestic account, those attributes must be set:
 ```java
