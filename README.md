@@ -21,7 +21,7 @@ Android 4.0.1 (API level 14) and above.
 Paymentwall SDK integration requires a project key. Obtain these Paymentwall API credentials in the application settings of your Merchant Account at paymentwall.com
 
 ## ADD CORE SDK
-Paymentwall SDK is delivered as a JAR package or public repository. Drop the jar file into your project or add a compile line into your gradle build file. 
+Paymentwall SDK is delivered as a AAR package or public repository. With AAR, import it as a module in your project and add it as your app module's dependency. With jar, simply drop the file into your lib folder of your app module/project.
 
 ### Declare required permission
 ```java
