@@ -26,17 +26,9 @@ Paymentwall SDK is delivered as a JAR package or public repository. Drop the jar
 ### Declare required permission
 ```java
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.SEND_SMS" />
-<uses-permission android:name="android.permission.READ_SMS" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<permission
-   android:name="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION"
-   android:label="Request for sending mobiamobroadcast to Mobiamo"
-   android:protectionLevel="signature" />
-
-<uses-permission android:name="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION" />
 ```
 On android 6.0 and above, you have to request user these permissions explicitly: android.permission.SEND_SMS, android.permission.READ_SMS, android.permission.READ_PHONE_STATE.
 
@@ -46,17 +38,6 @@ On android 6.0 and above, you have to request user these permissions explicitly:
    android:name="com.paymentwall.pwunifiedsdk.core.PaymentSelectionActivity"
    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
    android:windowSoftInputMode="stateVisible|adjustResize|adjustPan" />
-```
-### Declare Mobiamo broadcast receiver
-```java
-<receiver
-   android:name="com.paymentwall.pwunifiedsdk.mobiamo.core.MobiamoBroadcastReceiver"
-   android:exported="false"
-   android:permission="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION">
-   <intent-filter>
-       <action android:name="com.paymentwall.mobiamosdk.SENT_SMS_ACTION"></action>
-   </intent-filter>
-</receiver>
 ```
 ### Import needed classes to your app activity
 ```java
@@ -138,7 +119,35 @@ compile (project(':card.io-release')){
 request.addMint();
 ```
 ### Add Mobiamo payment method
-*Note: to use mobiamo payment, you need to gain privilege from integration team.
+Declare required permissions in AndroidManifest
+```java
+<uses-permission android:name="android.permission.SEND_SMS" />
+<uses-permission android:name="android.permission.READ_SMS" />
+<permission
+   android:name="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION"
+   android:label="Request for sending mobiamobroadcast to Mobiamo"
+   android:protectionLevel="signature" />
+
+<uses-permission android:name="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION" />
+```
+
+Declare Mobiamo activity and broadcast receiver
+```java
+<receiver
+   android:name="com.paymentwall.pwunifiedsdk.mobiamo.core.MobiamoBroadcastReceiver"
+   android:exported="false"
+   android:permission="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION">
+   <intent-filter>
+       <action android:name="com.paymentwall.mobiamosdk.SENT_SMS_ACTION"></action>
+   </intent-filter>
+</receiver>
+
+<activity
+   android:name="com.paymentwall.pwunifiedsdk.mobiamo.core.MobiamoDialogActivity"
+   android:configChanges="orientation|keyboardHidden|screenSize"
+   android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+```
+Add mobiamo from UnifiedRequest object
 ```java
 request.addMobiamo();
 ```
