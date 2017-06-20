@@ -37,6 +37,7 @@ On android 6.0 and above, you have to request user these permissions explicitly:
 <activity
    android:name="com.paymentwall.pwunifiedsdk.core.PaymentSelectionActivity"
    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+   android:theme="@style/PaymentwallSDKTheme"
    android:windowSoftInputMode="stateVisible|adjustResize|adjustPan" />
 ```
 ### Import needed classes to your app activity
@@ -230,3 +231,77 @@ Add external ps object to UnifiedRequest object.
 request.add(ps1, ps2,...);
 ```
 
+## UI CUSTOMIZATION
+Paymentwall SDK supports UI modification by our provided or your custom themes. There are two ways for UI modification: apply UI plugin or apply an android theme.
+### UI plugins
+You can refer [this link](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/UIPlugin) for UI plugins provided by us. The integration is simple. Import the plugin to your project and add it as a dependency of your app module like usual. Then add a line after initializing UnifiedRequest object:
+```java
+request.setUiStyle("game");
+```
+### Apply theme
+Firstly, create a new style in your styles.xml
+```java
+<style name="PwsdkCustomTheme" parent="@style/PaymentwallSDKTheme">
+</style>
+```
+We support the components which are changeable as in the list below:
+```java
+<attr name="colorPrimary" format="color" />
+        <attr name="textPrimary" format="color" />
+        <attr name="mainBackground" format="integer" />
+        <attr name="bgProductInfo" format="color" />
+        <attr name="bgProductInfoLand" format="color" />
+        <attr name="textProductInfo" format="color" />
+        <attr name="bgPsButton" format="integer" />
+        <attr name="textPsButton" format="color" />
+        <attr name="textCopyright" format="color" />
+        <attr name="bgInputForm" format="integer" />
+        <attr name="bgInputErrorForm" format="integer" />
+        <attr name="textInputForm" format="color" />
+        <attr name="textInputErrorForm" format="color"/>
+        <attr name="iconErrorForm" format="integer"/>
+        <attr name="textFormTitle" format="color" />
+        <attr name="bgConfirmButton" format="integer" />
+        <attr name="textConfirmButton" format="color" />
+        <attr name="backButton" format="integer"/>
+        <attr name="bgExpDialog" format="color"/>
+        <attr name="textExpDialog" format="color"/>
+        <attr name="monthButtonNormal" format="integer"/>
+        <attr name="monthButtonPressed" format="integer"/>
+        <attr name="textMonth" format="color"/>
+        <attr name="yearLeftArrow" format="integer"/>
+        <attr name="yearRightArrow" format="integer"/>
+        <attr name="bgNotifyDialog" format="color"/>
+        <attr name="progressColor" format="color"/>
+        <attr name="successIcon" format="integer"/>
+        <attr name="failIcon" format="integer"/>
+        <attr name="textProgress" format="color"/>
+        <attr name="textSuccess" format="color"/>
+        <attr name="textFail" format="color"/>
+        <attr name="textExtraMessage" format="color"/>
+```
+![](static/MainPage.png) ![](static/InputForm.png) 
+![](static/InputErrorForm.png) ![](static/ExpirationDateDialog.png) 
+![](static/Progress.png) ![](static/PaymentSuccess.png)
+![](static/PaymentUnsuccessful.png)
+
+You can modify any component you want by add it in your custom style:
+Example:
+```java
+<style name="PwsdkCustomTheme" parent="@style/PaymentwallSDKTheme">
+        <item name="colorPrimary">@color/baseRedFont</item>
+        <item name="textPrimary">@color/white</item>
+        <item name="mainBackground">@color/pw_secondary_color</item>
+        <item name="bgProductInfo">@color/pw_primary_color</item>
+        <item name="bgProductInfoLand">@color/pw_primary_color</item>
+        <item name="textProductInfo">#FF0000</item>
+    </style>
+```
+Finally, apply the theme for PaymentSelectionActivity in the AndroidManifest.xml:
+```java
+<activity
+      android:name="com.paymentwall.pwunifiedsdk.core.PaymentSelectionActivity"
+      android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+      android:theme="@style/PwsdkCustomTheme"
+      android:windowSoftInputMode="stateVisible|adjustResize|adjustPan" />
+```
