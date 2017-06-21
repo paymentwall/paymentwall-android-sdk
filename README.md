@@ -232,21 +232,24 @@ request.add(ps1, ps2,...);
 ```
 
 ## UI CUSTOMIZATION
-Paymentwall SDK supports UI modification by our provided or your custom themes. There are two ways for UI modification: apply UI plugin or apply an android theme.
+There are two ways for UI modification that Paymentwall Sdk supports: apply our provided UI plugins or your custom android theme.
 ### UI plugins
-You can refer [this link](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/UIPlugin) for UI plugins provided by us. The integration is simple. Import the plugin to your project and add it as a dependency of your app module like usual. Then add a line after initializing UnifiedRequest object:
+You can refer [this link](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/UIPlugin) for UI plugins provided by us. The integration is simple. Import the plugin to your project and add it as a dependency of your app module like usual. Then add a line after initializing UnifiedRequest object.
+Example with gameUI:
 ```java
 request.setUiStyle("game");
 ```
-### Apply theme
+### Custom theme
 Firstly, create a new style in your styles.xml
 ```java
 <style name="PwsdkCustomTheme" parent="@style/PaymentwallSDKTheme">
 </style>
 ```
-We support the components which are changeable as in the list below:
+with PaymentwallSDKTheme is the default theme for the sdk.
+
+We support the changeable components as in the list below:
 ```java
-<attr name="colorPrimary" format="color" />
+        <attr name="colorPrimary" format="color" />
         <attr name="textPrimary" format="color" />
         <attr name="mainBackground" format="integer" />
         <attr name="bgProductInfo" format="color" />
@@ -285,7 +288,7 @@ We support the components which are changeable as in the list below:
 ![](static/Progress.png) ![](static/PaymentSuccess.png)
 ![](static/PaymentUnsuccessful.png)
 
-You can modify any component you want by add it in your custom style:
+You can modify any component you want by add it in your custom style.
 Example:
 ```java
 <style name="PwsdkCustomTheme" parent="@style/PaymentwallSDKTheme">
@@ -302,6 +305,13 @@ Finally, apply the theme for PaymentSelectionActivity in the AndroidManifest.xml
 <activity
       android:name="com.paymentwall.pwunifiedsdk.core.PaymentSelectionActivity"
       android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+      android:windowSoftInputMode="stateVisible|adjustResize|adjustPan"
       android:theme="@style/PwsdkCustomTheme"
-      android:windowSoftInputMode="stateVisible|adjustResize|adjustPan" />
+      tools:replace="android:theme"/>
+```
+Declare tools namespace in the manifest tag:
+```java
+<manifest 
+    ...  
+    xmlns:tools="http://schemas.android.com/tools">
 ```
