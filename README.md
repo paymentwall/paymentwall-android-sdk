@@ -249,8 +249,8 @@ with PaymentwallSDKTheme is the default theme for the sdk.
 
 We support the changeable components as in the list below:
 ```java
-        <attr name="colorPrimary" format="color" />
-        <attr name="textPrimary" format="color" />
+        <attr name="colorMain" format="color" />
+        <attr name="textMain" format="color" />
         <attr name="mainBackground" format="integer" />
         <attr name="bgProductInfo" format="color" />
         <attr name="bgProductInfoLand" format="color" />
@@ -288,12 +288,12 @@ We support the changeable components as in the list below:
 ![](static/Progress.png) ![](static/PaymentSuccess.png)
 ![](static/PaymentUnsuccessful.png)
 
-You can modify any component you want by add it in your custom style.
+You can modify any component you want by adding it in your custom style.
 Example:
 ```java
 <style name="PwsdkCustomTheme" parent="@style/PaymentwallSDKTheme">
-        <item name="colorPrimary">@color/baseRedFont</item>
-        <item name="textPrimary">@color/white</item>
+        <item name="colorMain">@color/baseRedFont</item>
+        <item name="textMain">@color/white</item>
         <item name="mainBackground">@color/pw_secondary_color</item>
         <item name="bgProductInfo">@color/pw_primary_color</item>
         <item name="bgProductInfoLand">@color/pw_primary_color</item>
