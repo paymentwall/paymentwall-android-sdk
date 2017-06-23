@@ -176,6 +176,14 @@ setItemResID(int itemResID);
 //Content provider(image's URI converted to string)
 setItemContentProvider(String itemContentProvider);
 ```
+### Add custom parameters
+Paymentwall Android Sdk  allows to add extra parameters which can be used for later pingback. 
+Example code:
+```java
+request.addCustomParam("timeStamp", System.currentTimeMillis() / 1000 + "");
+```
+Multiple parameters are supported.
+
 ### Launch the SDK
 ```java
 Intent intent = new Intent(getApplicationContext(), PaymentSelectionActivity.class);
