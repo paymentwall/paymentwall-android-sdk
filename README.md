@@ -181,6 +181,8 @@ Paymentwall Android Sdk  allows to add extra parameters which can be used for la
 Example code:
 ```java
 request.addCustomParam("timeStamp", System.currentTimeMillis() / 1000 + "");
+request.addCustomParam("own_order_id", "o123456");
+request.addCustomParam("shopname", "ecopark");
 ```
 Multiple parameters are supported.
 
