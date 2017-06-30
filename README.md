@@ -293,10 +293,7 @@ We support the changeable components as in the list below:
         <attr name="textFail" format="color"/>
         <attr name="textExtraMessage" format="color"/>
 ```
-![](static/MainPage.png) ![](static/InputForm.png) 
-![](static/InputErrorForm.png) ![](static/ExpirationDateDialog.png) 
-![](static/Progress.png) ![](static/PaymentSuccess.png)
-![](static/PaymentUnsuccessful.png)
+![](static/PwsdkTheme.png) 
 
 You can modify any component you want by adding it in your custom style.
 Example:
