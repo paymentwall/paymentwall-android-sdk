@@ -86,6 +86,7 @@ BroadcastReceiver receiver = new BroadcastReceiver() {
        }
    }
 };
+```
 
 Then you can use brickToken to [create a charge](https://www.paymentwall.com/en/documentation/Brick/2968#create-a-charge). And then pass the result back to our sdk
 
@@ -94,6 +95,7 @@ Brick.getInstance().setResult(result, token);
 ```
 ```result```: 1 or 0 (success or failed)
 ```token```: the permanent token from charge object you get if the charge is success.
+
 ![](static/brick-permanent-token.png)
 
 If [3ds step is required](https://www.paymentwall.com/en/documentation/Brick/2968#3d-secure), you need to obtain the 3ds url from the response and send it back to the sdk:
