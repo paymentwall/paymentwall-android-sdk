@@ -62,12 +62,9 @@ request.setItemId(good.getId());
 request.setUserId(Constants.USER_ID);
 request.setSignVersion(3);
 request.setItemResID(good.getImage());
-request.setNativeDialog(true);
 request.setTimeout(30000);
 ```
-``` setNativeDialog(boolean enable) ```: if true, indicate that you want BrickSdk to display successful or failed payment dialog, otherwise, you want to display yourself.
-
-``` setTimeout(int timeout)```: set max duration for brick http request (in milliseconds)
+``` setTimeout(int timeout)```: set max duration for request (in milliseconds)
 
 Set item’s image: Refer this
 
@@ -76,14 +73,8 @@ Set item’s image: Refer this
 request.addBrick();
 ```
 ### Brick payment flow
-When brick token is successfully obtained inside the sdk, a broadcast intent will be sent to merchant’s app (This part may confuse merchant, we should remove it or give it a special style to let merchant know that this part belongs to our SDK, it’s not needed to be done by merchant side):
-```java
-Intent intent = new Intent();
-intent.setAction(getActivity().getPackageName() + Brick.BROADCAST_FILTER_MERCHANT);
-intent.putExtra(Brick.KEY_BRICK_TOKEN, token);
-LocalBroadcastManager.getInstance(self).sendBroadcast(intent);
-```
-Register for a broadcast receiver in your activity/service to get the token sent from the sdk:
+When brick token is successfully obtained inside the sdk, a broadcast intent will be sent to merchant’s app.
+You need to register for a broadcast receiver in your activity/service to get the token sent from the sdk:
 ```java
 BroadcastReceiver receiver = new BroadcastReceiver() {
    @Override
@@ -95,25 +86,23 @@ BroadcastReceiver receiver = new BroadcastReceiver() {
        }
    }
 };
-```
+
+Then you can use brickToken to [create a charge](https://www.paymentwall.com/en/documentation/Brick/2968#create-a-charge). And then pass the result back to our sdk
+
 ```java
-LocalBroadcastManager.getInstance(this).registerReceiver(receiver, new IntentFilter(getPackageName() + Brick.BROADCAST_FILTER_MERCHANT));
+Brick.getInstance().setResult(result, token);
 ```
-If you choose to display payment result dialog by the sdk, after processing your business logic, you need to send a broadcast intent back to the sdk with the result (successful or failed)
+```result```: 1 or 0 (success or failed)
+```token```: the permanent token from charge object you get if the charge is success.
+![](static/brick-permanent-token.png)
+
+If [3ds step is required](https://www.paymentwall.com/en/documentation/Brick/2968#3d-secure), you need to obtain the 3ds url from the response and send it back to the sdk:
 ```java
-int backendResult = 1; //1 means your processing is successful, 0 is failed
-Intent intent = new Intent();
-intent.setAction(getPackageName() + Brick.BROADCAST_FILTER_SDK);
-intent.putExtra(Brick.KEY_MERCHANT_SUCCESS, backendResult);
-LocalBroadcastManager.getInstance(MerchantBackendService.this).sendBroadcast(intent);
+Brick.getInstance().setResult(form3ds);
 ```
-### CardIO plugin
-You can let users using their phone camera to scan credit card for number, CVV, expired date automatically by compiling our cardIO plugin. Just add some lines in your app module's build.gradle file:
-```java
-compile (project(':card.io-release')){
-        transitive = true;
-    }
-```
+
+### Card scanner plugin
+You can let users using their phone camera to scan credit card for number, CVV, expired date automatically by compiling our cardIO plugin. Please refer the [integration guide](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/CardScanner)
 
 ### Add Mint payment method
 ```java
