@@ -5,6 +5,7 @@
 From your project, create a new module from paymentwall-android-sdk.aar
 
 ![](../static/import-coresdk-as.png)
+
 After that add this line in your app module's build.gradle:
 ```java
 compile project(':paymentwall-android-sdk')
