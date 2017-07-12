@@ -64,8 +64,8 @@ Set item’s image: Refer this
 request.addBrick();
 ```
 ### Brick payment flow
-When brick token is successfully obtained inside the sdk, a broadcast intent will be sent to merchant’s app.
-You need to register for a broadcast receiver in your activity/service to get the token sent from the sdk:
+#### One-time token
+One-time token is automatically obtained by the SDK. You need to register for a broadcast receiver in your activity/service to get the token sent from the sdk:
 ```java
 BroadcastReceiver receiver = new BroadcastReceiver() {
    @Override
@@ -79,7 +79,12 @@ BroadcastReceiver receiver = new BroadcastReceiver() {
 };
 ```
 
-Then you can use brickToken to [create a charge](https://www.paymentwall.com/en/documentation/Brick/2968#create-a-charge). And then pass the result back to our sdk
+Then you can use the one-time token to create a charge. 
+#### Create a charge
+POST request: https://api.paymentwall.com/api/brick/charge
+Parameters and description can be referred [here](https://www.paymentwall.com/en/documentation/Brick/2968#create-a-charge).
+
+If the response is charge object, you need to extract the permanent token and send it back to the SDK:
 
 ```java
 Brick.getInstance().setResult(result, token);
@@ -89,13 +94,20 @@ Brick.getInstance().setResult(result, token);
 
 ![](../static/brick-permanent-token.png)
 
-If [3ds step is required](https://www.paymentwall.com/en/documentation/Brick/2968#3d-secure), you need to obtain the 3ds url from the response and send it back to the sdk:
+If 3ds step is required, the following response is returned. 
+```java
+{
+  "secure":{"formHTML":"..."}
+}
+```
+You need to parse and obtain the 3ds url and then send it back to the sdk:
 ```java
 Brick.getInstance().setResult(form3ds);
 ```
+3ds form will be opened in SDK's native webview. After user fill in the security code, the form will submit itself and the result will be redirect to the SDK.
 
 ### Card scanner plugin
-You can let users using their phone camera to scan credit card for number, CVV, expired date automatically by compiling our cardIO plugin. Please refer the [integration guide](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/CardScanner)
+You can let users using their phone camera to scan credit card for number, CVV, expired date automatically by compiling our CardScanner plugin. Please refer the [integration guide](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/CardScanner)
 
 ### Add Mint payment method
 ```java
