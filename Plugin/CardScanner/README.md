@@ -8,5 +8,5 @@ compile project(':paymentwall-card-scanner')
 ### Eclipse
 Extract paymentwall-card-scanner.zip and import the project into your workspace. Add it as your main project's dependency.
 
-Then you are good to use card scanner function in Credit payment page.
+Then you are good to use card scanner function in Credit Card payment page.
 
