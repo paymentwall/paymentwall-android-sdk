@@ -23,7 +23,7 @@ PsMyCard myCard = new PsMyCard();
 ## Step 3
 Create an instance of ExternalPs with the above PsMyCard object
 ```java
-ExternalPs myCardPs = new ExternalPs("mycard", "MyCard", R.drawable.ps_logo_mycard, myCard);
+ExternalPs myCardPs = new ExternalPs("myCard", "MyCard", R.drawable.ps_logo_mycard, myCard);
 ```
 Add this to the unified request object:
 ```java
