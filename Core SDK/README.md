@@ -63,6 +63,10 @@ Set item’s image: Refer this
 ```java
 request.addBrick();
 ```
+You can enable footer for BrickSdk which includes bank information using:
+```java
+request.enableFooter();
+```
 ### Brick payment flow
 #### One-time token
 One-time token is automatically obtained by the SDK. You need to register for a broadcast receiver in your activity/service to get the token sent from the sdk:
@@ -106,10 +110,6 @@ Brick.getInstance().setResult(form3ds);
 ```
 3ds form will be opened in SDK's native webview. After user fill in the security code, the form will submit itself and the result will be redirect to the SDK.
 
-####You can enable footer for BrickSdk which includes bank information using:
-```java
-request.enableFooter();
-```
 
 ### Card scanner plugin
 You can let users using their phone camera to scan credit card for number, CVV, expired date automatically by compiling our CardScanner plugin. Please refer the [integration guide](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/CardScanner)
