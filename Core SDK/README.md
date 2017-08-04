@@ -63,6 +63,10 @@ Set item’s image: Refer this
 ```java
 request.addBrick();
 ```
+You can enable footer for BrickSdk which includes bank information using:
+```java
+request.enableFooter();
+```
 ### Brick payment flow
 #### One-time token
 One-time token is automatically obtained by the SDK. You need to register for a broadcast receiver in your activity/service to get the token sent from the sdk:
@@ -106,6 +110,7 @@ Brick.getInstance().setResult(form3ds);
 ```
 3ds form will be opened in SDK's native webview. After user fill in the security code, the form will submit itself and the result will be redirect to the SDK.
 
+
 ### Card scanner plugin
 You can let users using their phone camera to scan credit card for number, CVV, expired date automatically by compiling our CardScanner plugin. Please refer the [integration guide](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/CardScanner)
 
@@ -147,14 +152,20 @@ Add mobiamo from UnifiedRequest object
 request.addMobiamo();
 ```
 ### Add PwLocal payment method
-Firstly, you have to create a [PwLocal request](https://www.paymentwall.com/en/documentation/PWLocal-Android-SDK/3018#create-a-request). Then set it to UnifiedRequest object:
-```java
-request.setPwlocalRequest(customRequest);
-```
-Finally, enable PwLocal option:
+Firstly, enable PwLocal option:
 ```java
 request.addPwLocal();
 ```
+Use ```addPwlocalParams(String key, String value)``` method to add extra params for Pwlocal. The params ```prices```, ```amount```, ```currencyCode```, ```ag_name```, ```ag_external_id```, ```uid``` are automatically added by SDK (taken from UnifiedRequest object you declared above) so you don't need to add them.
+Extra params list can be refered [here](prices, amount, currencyCode, currencies, ag_name, ag_external_id, uid).
+
+Sample code:
+```java
+request.addPwlocalParams(Const.P.EMAIL, "fixed");
+request.addPwlocalParams(Const.P.WIDGET, "pw");
+request.addPwlocalParams(Const.P.EVALUATION, "1");
+```
+
 ### Set item image for the request
 There are some data types of an item’s image you can pass to Paymentwall SDK. You can choose one in 4 below options:
 ```java
@@ -286,6 +297,7 @@ We support the changeable components as in the list below:
         <attr name="textSuccess" format="color"/>
         <attr name="textFail" format="color"/>
         <attr name="textExtraMessage" format="color"/>
+        <attr name="iconPwlocal" format="integer" />
 ```
 ![](../static/PwsdkTheme.png) 
 
