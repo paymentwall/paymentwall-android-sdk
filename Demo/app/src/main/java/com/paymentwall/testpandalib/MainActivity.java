@@ -65,21 +65,11 @@ public class MainActivity extends Activity {
         request.addMint();
         request.addMobiamo();
 
-        CustomRequest customRequest = new CustomRequest();
-        customRequest.put(Const.P.KEY, Constants.PW_PROJECT_KEY);
-        customRequest.put(Const.P.WIDGET, "pw");
-        customRequest.put(Const.P.EVALUATION, "1");
-        customRequest.put(Const.P.UID, Constants.USER_ID);
-        customRequest.put(Const.P.AG_EXTERNAL_ID, Constants.ITEM_ID);
-        customRequest.put(Const.P.AG_NAME, Constants.ITEM_NAME);
-        customRequest.put(Const.P.CURRENCYCODE, Constants.CURRENCY);
-        customRequest.put(Const.P.AMOUNT, Constants.AMOUNT + "");
-        customRequest.put(Const.P.AG_TYPE, "fixed");
-        customRequest.put(Const.P.EMAIL, "fixed");
-        customRequest.setSecretKey(Constants.PW_SECRET_KEY);
-        customRequest.setSignVersion(3);
-        request.setPwlocalRequest(customRequest);
         request.addPwLocal();
+        request.addPwlocalParams(Const.P.EMAIL, "fixed");
+        request.addPwlocalParams(Const.P.WIDGET, "pw");
+        request.addPwlocalParams(Const.P.EVALUATION, "1");
+
 
         PsAlipay alipay = new PsAlipay();
         alipay.setAppId(Constants.ALIPAY.APP_ID);
