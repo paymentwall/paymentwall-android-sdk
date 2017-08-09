@@ -168,7 +168,7 @@ request.addPwlocalParams(Const.P.EVALUATION, "1");
 ### Custom payment selection page
 If you choose to build payment selection page by yourself and use pwlocal to display payment details, simply add this method:
 ```java
-request.skipSelecction(psId);
+request.skipSelection(psId);
 ```
 with ```psId``` is the short code of the payment system you want to pass to the sdk.
 For example, the below line of code will open a payment page for credit/debit card directly.
