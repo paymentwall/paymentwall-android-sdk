@@ -165,6 +165,16 @@ request.addPwlocalParams(Const.P.EMAIL, "fixed");
 request.addPwlocalParams(Const.P.WIDGET, "pw");
 request.addPwlocalParams(Const.P.EVALUATION, "1");
 ```
+### Custom payment selection page
+If you choose to build payment selection page by yourself and use pwlocal to display payment details, simply add this method:
+```java
+request.skipSelecction(psId);
+```
+with ```psId``` is the short code of the payment system you want to pass to the sdk.
+For example, the below line of code will open a payment page for credit/debit card directly.
+```java
+request.skipSelection("cc");
+```
 
 ### Set item image for the request
 There are some data types of an item’s image you can pass to Paymentwall SDK. You can choose one in 4 below options:
