@@ -1,6 +1,6 @@
 # Coresdk integration instruction
 
-## ADD CORE SDK
+## Step 1: Add Core SDK
 ### Android Studio
 From your project, create a new module from paymentwall-android-sdk.aar
 
@@ -10,7 +10,7 @@ After that add this line in your app module's build.gradle:
 ```java
 compile project(':paymentwall-android-sdk')
 ```
-### Eclipse 
+### Eclipse
 Extract paymentwall-android-sdk.zip and import the project into your workspace. And add this as your main project's library.
 
 ![](../static/import-coresdk-eclipse.png)
@@ -31,6 +31,9 @@ Extract paymentwall-android-sdk.zip and import the project into your workspace. 
    android:theme="@style/PaymentwallSDKTheme"
    android:windowSoftInputMode="stateVisible|adjustResize|adjustPan" />
 ```
+
+## Step 2: Build Unified Payment Params
+
 ### Import needed classes to your app activity
 ```java
 import com.paymentwall.pwunifiedsdk.core.PaymentSelectionActivity;
@@ -57,124 +60,7 @@ request.setTimeout(30000);
 ```
 ``` setTimeout(int timeout)```: set max duration for request (in milliseconds)
 
-Set item’s image: Refer this
-
-### Add Brick payment method
-```java
-request.addBrick();
-```
-You can enable footer for BrickSdk which includes bank information using:
-```java
-request.enableFooter();
-```
-### Brick payment flow
-#### One-time token
-One-time token is automatically obtained by the SDK. You need to register for a broadcast receiver in your activity/service to get the token sent from the sdk:
-```java
-BroadcastReceiver receiver = new BroadcastReceiver() {
-   @Override
-   public void onReceive(Context context, Intent intent) {
-       if (intent.getAction().equalsIgnoreCase(getPackageName() + Brick.BROADCAST_FILTER_MERCHANT)) {
-           String brickToken = intent.getStringExtra(Brick.KEY_BRICK_TOKEN);
-          //process your business logic
-
-       }
-   }
-};
-```
-
-Then you can use the one-time token to create a charge. 
-#### Create a charge
-POST request: https://api.paymentwall.com/api/brick/charge
-Parameters and description can be referred [here](https://www.paymentwall.com/en/documentation/Brick/2968#create-a-charge).
-
-If the response is charge object, you need to extract the permanent token and send it back to the SDK:
-
-```java
-Brick.getInstance().setResult(result, token);
-```
-```result```: 1 or 0 (success or failed)
-```token```: the permanent token from charge object you get if the charge is success.
-
-![](../static/brick-permanent-token.png)
-
-If 3ds step is required, the following response is returned. 
-```java
-{
-  "secure":{"formHTML":"..."}
-}
-```
-You need to parse and obtain the 3ds url and then send it back to the sdk:
-```java
-Brick.getInstance().setResult(form3ds);
-```
-3ds form will be opened in SDK's native webview. After user fill in the security code, the form will submit itself and the result will be redirect to the SDK.
-
-
-### Card scanner plugin
-You can let users using their phone camera to scan credit card for number, CVV, expired date automatically by compiling our CardScanner plugin. Please refer the [integration guide](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/CardScanner)
-
-### Add Mint payment method
-```java
-request.addMint();
-```
-### Add Mobiamo payment method
-Declare required permissions in AndroidManifest
-```java
-<uses-permission android:name="android.permission.SEND_SMS" />
-<uses-permission android:name="android.permission.READ_SMS" />
-<permission
-   android:name="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION"
-   android:label="Request for sending mobiamobroadcast to Mobiamo"
-   android:protectionLevel="signature" />
-
-<uses-permission android:name="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION" />
-```
-
-Declare Mobiamo activity and broadcast receiver
-```java
-<receiver
-   android:name="com.paymentwall.pwunifiedsdk.mobiamo.core.MobiamoBroadcastReceiver"
-   android:exported="false"
-   android:permission="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION">
-   <intent-filter>
-       <action android:name="com.paymentwall.mobiamosdk.SENT_SMS_ACTION"></action>
-   </intent-filter>
-</receiver>
-
-<activity
-   android:name="com.paymentwall.pwunifiedsdk.mobiamo.core.MobiamoDialogActivity"
-   android:configChanges="orientation|keyboardHidden|screenSize"
-   android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-```
-Add mobiamo from UnifiedRequest object
-```java
-request.addMobiamo();
-```
-### Add PwLocal payment method
-Firstly, enable PwLocal option:
-```java
-request.addPwLocal();
-```
-Use ```addPwlocalParams(String key, String value)``` method to add extra params for Pwlocal. The params ```prices```, ```amount```, ```currencyCode```, ```ag_name```, ```ag_external_id```, ```uid``` are automatically added by SDK (taken from UnifiedRequest object you declared above) so you don't need to add them.
-Extra params list can be refered [here](prices, amount, currencyCode, currencies, ag_name, ag_external_id, uid).
-
-Sample code:
-```java
-request.addPwlocalParams(Const.P.EMAIL, "fixed");
-request.addPwlocalParams(Const.P.WIDGET, "pw");
-request.addPwlocalParams(Const.P.EVALUATION, "1");
-```
-### Custom payment selection page
-If you choose to build payment selection page by yourself and use pwlocal to display payment details, simply add this method:
-```java
-request.skipSelection(psId);
-```
-with ```psId``` is the short code of the payment system you want to pass to the sdk.
-For example, the below line of code will open a payment page for credit/debit card directly.
-```java
-request.skipSelection("cc");
-```
+``` Set item’s image```: please refer to [guidance](set-item-image-for-the-request) below on how to set item's image.
 
 ### Set item image for the request
 There are some data types of an item’s image you can pass to Paymentwall SDK. You can choose one in 4 below options:
@@ -191,8 +77,20 @@ setItemResID(int itemResID);
 //Content provider(image's URI converted to string)
 setItemContentProvider(String itemContentProvider);
 ```
+
+## Step 3: Add Payment methods
+
+You can choose one or more payment methods according to your needs.
+* [Brick](#brick).
+* [PWLocal](#pwlocal).
+* [Mint](#mint).
+* [Mobiamo](#mobiamo).
+* [External payment methods](#external-payment-systems-injection).
+
+## Step 4: Set Custom Pingback Parameters (Optional)
+
 ### Add custom parameters
-Paymentwall Android Sdk  allows to add extra parameters which can be used for later pingback. 
+By default, Pingback will send ```goodsid``` and ```ref``` to your server. To satisfy the needs for more information, Paymentwall Android Sdk  allows to add extra parameters which can be used for pingback.
 Example code:
 ```java
 request.addCustomParam("timeStamp", System.currentTimeMillis() / 1000 + "");
@@ -200,6 +98,8 @@ request.addCustomParam("own_order_id", "o123456");
 request.addCustomParam("shopname", "ecopark");
 ```
 Multiple parameters are supported.
+
+## Step 5: Launch SDK and Handle Callback
 
 ### Launch the SDK
 ```java
@@ -234,36 +134,12 @@ switch (resultCode) {
 }
 ```
 
-## EXTERNAL PAYMENT SYSTEMS INJECTION
-Paymentwall SDK supports external payment system injection (which are in our defined payment system (PS) list). Each time you import an external PS, all you need to do are adding that native sdk (if available) of PS and our adapter (produced for that one) to your project, make the params and then pass to our core Sdk.
+## Step 6: UI Customization (optional)
 
-Add compilation lines for external ps sdk and adapter in your main app module build.gradle file
-```java
-compile project(':pandappsdk')
-compile project(':alipayadapter')
-compile files('libs/alipaySdk-20160825.jar')
-```
-### Initialize an external PS and add to UnifiedRequest
-```java
-public ExternalPs(String id , String displayName, int iconResId, Serializable params)
-```
-```id```: payment system’s id, as defined in this.
-```displayName```: label of the ps displayed on the button.
-```iconResId```: PS logo resource id.,
-```Params```: parameters object passed to core sdk (varies among different PS).
-Add external ps object to UnifiedRequest object.
-```java
-request.add(ps1, ps2,...);
-```
+There are two ways for UI modification which Paymentwall Sdk supports:
+* [UI plugins](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/UIPlugin): add plugin for UI designed by Paymentwall.
+* Custom theme: adding several lines of codes in core SDK, the style is determined by you.
 
-## UI CUSTOMIZATION
-There are two ways for UI modification that Paymentwall Sdk supports: apply our provided UI plugins or your custom android theme.
-### UI plugins
-You can refer [this link](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/UIPlugin) for UI plugins provided by us. The integration is simple. Import the plugin to your project and add it as a dependency of your app module like usual. Then add a line after initializing UnifiedRequest object.
-Example with gameUI:
-```java
-request.setUiStyle("game");
-```
 ### Custom theme
 Firstly, create a new style in your styles.xml
 ```java
@@ -309,7 +185,7 @@ We support the changeable components as in the list below:
         <attr name="textExtraMessage" format="color"/>
         <attr name="iconPwlocal" format="integer" />
 ```
-![](../static/PwsdkTheme.png) 
+![](../static/PwsdkTheme.png)
 
 You can modify any component you want by adding it in your custom style.
 Example:
@@ -334,7 +210,194 @@ Finally, apply the theme for PaymentSelectionActivity in the AndroidManifest.xml
 ```
 Declare tools namespace in the manifest tag:
 ```java
-<manifest 
+<manifest
     ...  
     xmlns:tools="http://schemas.android.com/tools">
+```
+
+## Payment methods integration details
+
+### Brick
+
+** Step 1: Add Brick Payment Method **
+```java
+request.addBrick();
+```
+NOTE: If you are asked to add bank information in footer, please add code below:
+
+```java
+request.enableFooter();
+```
+
+** Step 2: Handle One-time Token **
+
+One-time token is automatically obtained by the SDK. You need to register for a broadcast receiver in your activity/service to get the token sent from the sdk:
+```java
+BroadcastReceiver receiver = new BroadcastReceiver() {
+   @Override
+   public void onReceive(Context context, Intent intent) {
+       if (intent.getAction().equalsIgnoreCase(getPackageName() + Brick.BROADCAST_FILTER_MERCHANT)) {
+           String brickToken = intent.getStringExtra(Brick.KEY_BRICK_TOKEN);
+          //process your business logic
+
+       }
+   }
+};
+```
+Then you can use the one-time token to create a charge.
+
+** Step 3: Create A Charge **
+
+After obtaining one-time token, send a request from backend to Paymentwall server to create a charge.
+
+POST request to: https://api.paymentwall.com/api/brick/charge
+
+Parameters and description can be referred [here](https://paymentwall.github.io/apis#section-brick-charge).
+
+** Step 4: Handle Charge Response **
+
+```java
+Brick.getInstance().setResult(result, token);
+```
+```result```: 1 or 0 (success or failed)
+
+```token```: the permanent token from charge object you get, if the charge is success.
+
+![](../static/brick-permanent-token.png)
+
+** If the response is ```charge object```**, you need to extract the permanent token and send it back to the SDK:
+
+```java
+Brick.getInstance().setResult（1,token);
+```
+
+** If the response is ```3d secure form``` **, the following is returned in the response body:
+```java
+{
+  "secure":{"formHTML":"..."}
+}
+```
+You need to parse and obtain the 3ds url and then send it back to the sdk:
+```java
+Brick.getInstance().setResult(form3ds);
+```
+3ds form will be opened in SDK's native webview. After user fill in the security code, the form will submit itself and the result will be redirect to the SDK.
+
+Note: If 3ds is omitted, charge object will be returned in response.
+
+** If the response is an ```error object```**, please set error in the place of token.
+
+```java
+Brick.getInstance().setResult(0, errorMessage);
+```
+
+** Step 5: Card Scanner Plugin (Optional) **
+
+By compiling CardScanner plugin, users are allowed to use their phone camera to scan credit cards for card number and expired date.
+Please refer [here](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/CardScanner) for integration guidance.
+
+### Mint
+
+Add Mint payment method
+```java
+request.addMint();
+```
+
+### Mobiamo
+
+** Step 1: Declaration **
+
+Declare required permissions in AndroidManifest
+```java
+<uses-permission android:name="android.permission.SEND_SMS" />
+<uses-permission android:name="android.permission.READ_SMS" />
+<permission
+   android:name="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION"
+   android:label="Request for sending mobiamobroadcast to Mobiamo"
+   android:protectionLevel="signature" />
+
+<uses-permission android:name="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION" />
+```
+
+Declare Mobiamo activity and broadcast receiver
+```java
+<receiver
+   android:name="com.paymentwall.pwunifiedsdk.mobiamo.core.MobiamoBroadcastReceiver"
+   android:exported="false"
+   android:permission="${applicationId}.mobiamo.PAYMENT_BROADCAST_PERMISSION">
+   <intent-filter>
+       <action android:name="com.paymentwall.mobiamosdk.SENT_SMS_ACTION"></action>
+   </intent-filter>
+</receiver>
+
+<activity
+   android:name="com.paymentwall.pwunifiedsdk.mobiamo.core.MobiamoDialogActivity"
+   android:configChanges="orientation|keyboardHidden|screenSize"
+   android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+```
+** Step 2: Add Mobiamo From UnifiedRequest Object **
+```java
+request.addMobiamo();
+```
+
+### PWLocal
+
+** Step 1: Add PwLocal Payment Method **
+
+```java
+request.addPwLocal();
+
+** Step 2: Add Extra parameters
+```
+Use ```addPwlocalParams(String key, String value)``` method to add extra params for Pwlocal.
+
+Some params are automatically added by SDK (taken from UnifiedRequest object you declared above), so you don't need to add them for a second time.
+* ```prices```
+* ```amount```
+* ```currencyCode```
+* ```ag_name```
+* ```ag_external_id```
+* ```uid```
+
+Extra params list can be referred to [here](https://paymentwall.github.io/apis#section-checkout-onetime).
+
+Sample code:
+```java
+request.addPwlocalParams(Const.P.EMAIL, "fixed");
+request.addPwlocalParams(Const.P.WIDGET, "pw");
+request.addPwlocalParams(Const.P.EVALUATION, "1");
+```
+
+### EXTERNAL PAYMENT SYSTEMS INJECTION
+Paymentwall SDK supports external payment system injection (which are in our defined payment system (PS) list). Each time you import an external PS, all you need to do are adding that native sdk (if available) of PS and our adapter (produced for that one) to your project, make the params and then pass to our core Sdk.
+
+** Step 1: Building .gradle  File **
+
+Add compilation lines for external ps sdk and adapter in your main app module build.gradle file
+```java
+compile project(':pandappsdk')
+compile project(':alipayadapter')
+compile files('libs/alipaySdk-20160825.jar')
+```
+** Step 2: Initialzing **
+
+Initialize an external PS and add to UnifiedRequest
+```java
+public ExternalPs(String id , String displayName, int iconResId, Serializable params)
+```
+
+```id```: payment system’s id
+
+```displayName```: label of the ps displayed on the button.
+
+```iconResId```: PS logo resource id
+
+```Params```: parameters object passed to core sdk (varies among different PS).
+
+** Step 3: Add Payment Options **
+
+Add external ps object to UnifiedRequest object.
+
+```java
+request.add(ps1, ps2,...);
 ```
