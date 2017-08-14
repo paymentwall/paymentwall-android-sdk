@@ -371,7 +371,7 @@ request.addPwlocalParams(Const.P.EVALUATION, "1");
 ### EXTERNAL PAYMENT SYSTEMS INJECTION
 Paymentwall SDK supports external payment system injection (which are in our defined payment system (PS) list). Each time you import an external PS, all you need to do are adding that native sdk (if available) of PS and our adapter (produced for that one) to your project, make the params and then pass to our core Sdk.
 
-**Step 1: Building .gradle  File **
+**Step 1: Building .gradle  File**
 
 Add compilation lines for external ps sdk and adapter in your main app module build.gradle file
 ```java
