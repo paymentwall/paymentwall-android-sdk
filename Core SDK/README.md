@@ -219,7 +219,7 @@ Declare tools namespace in the manifest tag:
 
 ### Brick
 
-** Step 1: Add Brick Payment Method **
+**Step 1: Add Brick Payment Method**
 ```java
 request.addBrick();
 ```
@@ -229,7 +229,7 @@ NOTE: If you are asked to add bank information in footer, please add code below:
 request.enableFooter();
 ```
 
-** Step 2: Handle One-time Token **
+**Step 2: Handle One-time Token**
 
 One-time token is automatically obtained by the SDK. You need to register for a broadcast receiver in your activity/service to get the token sent from the sdk:
 ```java
@@ -246,7 +246,7 @@ BroadcastReceiver receiver = new BroadcastReceiver() {
 ```
 Then you can use the one-time token to create a charge.
 
-** Step 3: Create A Charge **
+**Step 3: Create A Charge**
 
 After obtaining one-time token, send a request from backend to Paymentwall server to create a charge.
 
@@ -254,7 +254,7 @@ POST request to: https://api.paymentwall.com/api/brick/charge
 
 Parameters and description can be referred [here](https://paymentwall.github.io/apis#section-brick-charge).
 
-** Step 4: Handle Charge Response **
+**Step 4: Handle Charge Response**
 
 ```java
 Brick.getInstance().setResult(result, token);
@@ -265,13 +265,13 @@ Brick.getInstance().setResult(result, token);
 
 ![](../static/brick-permanent-token.png)
 
-** If the response is ```charge object```**, you need to extract the permanent token and send it back to the SDK:
+**If the response is ```charge object```**, you need to extract the permanent token and send it back to the SDK:
 
 ```java
 Brick.getInstance().setResult（1,token);
 ```
 
-** If the response is ```3d secure form``` **, the following is returned in the response body:
+**If the response is ```3d secure form```**, the following is returned in the response body:
 ```java
 {
   "secure":{"formHTML":"..."}
@@ -285,13 +285,13 @@ Brick.getInstance().setResult(form3ds);
 
 Note: If 3ds is omitted, charge object will be returned in response.
 
-** If the response is an ```error object```**, please set error in the place of token.
+**If the response is an ```error object```**, please set error in the place of token.
 
 ```java
 Brick.getInstance().setResult(0, errorMessage);
 ```
 
-** Step 5: Card Scanner Plugin (Optional) **
+**Step 5: Card Scanner Plugin (Optional)**
 
 By compiling CardScanner plugin, users are allowed to use their phone camera to scan credit cards for card number and expired date.
 Please refer [here](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/CardScanner) for integration guidance.
@@ -305,7 +305,7 @@ request.addMint();
 
 ### Mobiamo
 
-** Step 1: Declaration **
+**Step 1: Declaration**
 
 Declare required permissions in AndroidManifest
 ```java
@@ -335,20 +335,20 @@ Declare Mobiamo activity and broadcast receiver
    android:configChanges="orientation|keyboardHidden|screenSize"
    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 ```
-** Step 2: Add Mobiamo From UnifiedRequest Object **
+**Step 2: Add Mobiamo From UnifiedRequest Object**
 ```java
 request.addMobiamo();
 ```
 
 ### PWLocal
 
-** Step 1: Add PwLocal Payment Method **
+**Step 1: Add PwLocal Payment Method**
 
 ```java
 request.addPwLocal();
-
-** Step 2: Add Extra parameters
 ```
+**Step 2: Add Extra parameters**
+
 Use ```addPwlocalParams(String key, String value)``` method to add extra params for Pwlocal.
 
 Some params are automatically added by SDK (taken from UnifiedRequest object you declared above), so you don't need to add them for a second time.
@@ -371,7 +371,7 @@ request.addPwlocalParams(Const.P.EVALUATION, "1");
 ### EXTERNAL PAYMENT SYSTEMS INJECTION
 Paymentwall SDK supports external payment system injection (which are in our defined payment system (PS) list). Each time you import an external PS, all you need to do are adding that native sdk (if available) of PS and our adapter (produced for that one) to your project, make the params and then pass to our core Sdk.
 
-** Step 1: Building .gradle  File **
+**Step 1: Building .gradle  File **
 
 Add compilation lines for external ps sdk and adapter in your main app module build.gradle file
 ```java
@@ -379,7 +379,7 @@ compile project(':pandappsdk')
 compile project(':alipayadapter')
 compile files('libs/alipaySdk-20160825.jar')
 ```
-** Step 2: Initialzing **
+**Step 2: Initialzing**
 
 Initialize an external PS and add to UnifiedRequest
 ```java
@@ -394,7 +394,7 @@ public ExternalPs(String id , String displayName, int iconResId, Serializable pa
 
 ```Params```: parameters object passed to core sdk (varies among different PS).
 
-** Step 3: Add Payment Options **
+**Step 3: Add Payment Options**
 
 Add external ps object to UnifiedRequest object.
 
