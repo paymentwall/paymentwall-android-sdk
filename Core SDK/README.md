@@ -60,7 +60,7 @@ request.setTimeout(30000);
 ```
 ``` setTimeout(int timeout)```: set max duration for request (in milliseconds)
 
-``` Set item’s image```: please refer to [guidance](set-item-image-for-the-request) below on how to set item's image.
+``` Set item’s image```: please refer to [guidance](#set-item-image-for-the-request) below on how to set item's image.
 
 ### Set item image for the request
 There are some data types of an item’s image you can pass to Paymentwall SDK. You can choose one in 4 below options:
