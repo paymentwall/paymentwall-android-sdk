@@ -28,7 +28,7 @@ Paymentwall SDK integration requires a project key. Obtain these Paymentwall API
 ### List of available plugins
 - [Alipay](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/Alipay)
 - [Wechatpay](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/Wechatpay)
-- [MyCard](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/Alipay)
+- [MyCard](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/Mycard)
 - [Credit card scanner](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/CardScanner)
 - [UI Plugin](https://github.com/paymentwall/paymentwall-android-sdk/tree/master/Plugin/UIPlugin)
 
