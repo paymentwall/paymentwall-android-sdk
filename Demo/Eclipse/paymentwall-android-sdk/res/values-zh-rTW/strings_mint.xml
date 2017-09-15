@@ -1,0 +1,73 @@
+<resources>
+    <!--<string name="enter_your_pin">Enter your ePin</string>-->
+    <string name="confirm">確認</string>
+
+    <!--Dialog waiting-->
+    <string name="timeout_connnection">網絡連接出現問題</string>
+    <string name="payment_error">支付發生錯誤</string>
+
+    <string name="enter_your_pin">輸入ePin代碼</string>
+    <string name="agreement">我接受隱私和其他條款</string>
+
+    <!--Dialog help-->
+
+    <string name="terms">條款</string>
+    <string name="privacy_policy">隱私</string>
+
+    <!--Dialog payment successful-->
+
+    <string name="status">狀態</string>
+    <string name="error">錯誤</string>
+    <string name="unknown_error">未知錯誤</string>
+    <string name="err_mint_pin_16">錯誤~MINT的驗證碼須為16位數字</string>
+    <string name="service_unavailable">服務不可用，請稍後重試</string>
+    <string name="check_internet_connection">請檢查網絡連接是否正常</string>
+    <string name="err_system_time_incorrect">由於系統時間不正確，未能成功支付。請更新！</string>
+
+    <string name="card_number_hint">卡号</string>
+    <string name="exp_date_hint">有效期限</string>
+    <string name="cvv_hint">CVV</string>
+    <string name="email_hint">郵箱地址</string>
+
+    <!--Layout DatePicker-->
+    <string name="choose_expiration_date">選擇截止日期</string>
+    <string name="month_1">一月</string>
+    <string name="month_2">二月</string>
+    <string name="month_3">三月</string>
+    <string name="month_4">四月</string>
+    <string name="month_5">五月</string>
+    <string name="month_6">六月</string>
+    <string name="month_7">七月</string>
+    <string name="month_8">八月</string>
+    <string name="month_9">九月</string>
+    <string name="month_10">十月</string>
+    <string name="month_11">十一月</string>
+    <string name="month_12">十二月</string>
+    <string name="month_1_full">一月</string>
+    <string name="month_2_full">二月</string>
+    <string name="month_3_full">三月</string>
+    <string name="month_4_full">四月</string>
+    <string name="month_5_full">五月</string>
+    <string name="month_6_full">六月</string>
+    <string name="month_7_full">七月</string>
+    <string name="month_8_full">八月</string>
+    <string name="month_9_full">九月</string>
+    <string name="month_10_full">十月</string>
+    <string name="month_11_full">十一月</string>
+    <string name="month_12_full">十二月</string>
+
+    <string name="err_invalid_card_number">信用卡信息有誤</string>
+    <string name="err_invalid_expiration_date">截止日期不合法</string>
+    <string name="error_invalid_cvv">CVV有誤</string>
+    <string name="error_invalid_email">郵箱地址有誤</string>
+
+    <string name="description_roaming_state">(您現在處於漫遊狀態，運營商會對文本消息收取費用)</string>
+
+    <string name="payment_not_supported_message">您的國家不支持此種支付方式</string>
+
+    <string name="err_no_internet_connection">請檢查網絡連接是否正常</string>
+    <string name="err_no_sim">未發現sim卡</string>
+
+    <string name="pricepoint_confirmation">%1$s 將通過您的手機通訊費扣除</string>
+
+</resources>

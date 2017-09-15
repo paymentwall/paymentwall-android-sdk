@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flSelection"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+
+    <include
+        layout="@layout/saas_layout_product_info_land"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="48dp">
+
+        <LinearLayout
+            android:layout_width="327dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <LinearLayout
+                android:id="@+id/llBrick"
+
+                style="@style/saas_ps_button">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    style="@style/ps_icon"
+                    android:src="@drawable/creditdebit" />
+
+                <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+                    android:id="@+id/tvBrick"
+                    style="@style/style_ps_name"
+                    android:text="@string/title_brick" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llLocalMethods"
+                style="@style/saas_ps_button"
+                android:layout_marginTop="2dp">
+
+                <ImageView
+                    style="@style/ps_icon"
+                    android:src="@drawable/local" />
+
+                <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+                    android:id="@+id/tvLocalPs"
+                    style="@style/style_ps_name"
+                    android:text="@string/title_local_payment" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMint"
+                style="@style/saas_ps_button"
+                android:layout_marginTop="2dp">
+
+                <ImageView
+                    style="@style/ps_icon"
+                    android:src="@drawable/mint" />
+
+                <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+                    android:id="@+id/tvMint"
+                    style="@style/style_ps_name"
+                    android:text="@string/title_mint" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMobiamo"
+                style="@style/saas_ps_button"
+                android:layout_marginTop="2dp">
+
+                <ImageView
+                    style="@style/ps_icon"
+                    android:src="@drawable/mobiamo" />
+
+                <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+                    android:id="@+id/tvMobiamo"
+                    style="@style/style_ps_name"
+                    android:text="@string/title_mobiamo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llPwLocal"
+                style="@style/saas_ps_button"
+                android:visibility="gone"
+                android:layout_marginTop="2dp">
+
+                <ImageView
+                    style="@style/ps_icon"
+                    android:src="@drawable/others" />
+
+                <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+                    android:id="@+id/tvPwLocal"
+                    style="@style/style_ps_name"
+                    android:text="@string/title_pwlocal" />
+
+            </LinearLayout>
+
+            <include
+                layout="@layout/saas_layout_copyright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

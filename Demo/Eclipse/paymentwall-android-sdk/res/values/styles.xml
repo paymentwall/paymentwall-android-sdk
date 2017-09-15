@@ -1,0 +1,96 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="PaymentwallSDKTheme">
+        <item name="colorMain">@color/saas_colorPrimary</item>
+        <item name="textMain">@color/saas_textPrimary</item>
+        <item name="mainBackground">@color/bg_main</item>
+        <item name="bgProductInfo">@color/white</item>
+        <item name="bgProductInfoLand">@color/white</item>
+        <item name="textProductInfo">@color/saas_textPrimary</item>
+        <item name="bgPsButton">@drawable/saas_btn_ps</item>
+        <item name="textPsButton">@color/saas_textPrimary</item>
+        <item name="textCopyright">@color/saas_textSecondary</item>
+        <item name="bgInputForm">@drawable/saas_bg_input_form</item>
+        <item name="bgInputErrorForm">@drawable/saas_bg_input_form_error</item>
+        <item name="textInputForm">@color/saas_textPrimary</item>
+        <item name="textInputErrorForm">@color/input_form_error</item>
+        <item name="iconErrorForm">@drawable/ic_form_error</item>
+        <item name="textFormTitle">@color/saas_textSecondary</item>
+        <item name="bgConfirmButton">@drawable/saas_btn_confirm</item>
+        <item name="textConfirmButton">@color/text_confirm</item>
+        <item name="backButton">@drawable/ic_arrow_back</item>
+        <item name="bgExpDialog">@color/bg_expiration_date</item>
+        <item name="textExpDialog">@color/saas_textPrimary</item>
+        <item name="monthButtonNormal">@drawable/btn_price_point_normal</item>
+        <item name="monthButtonPressed">@drawable/btn_price_point_pressed</item>
+        <item name="textMonth">@color/saas_textSecondary</item>
+        <item name="yearLeftArrow">@drawable/icon_previous</item>
+        <item name="yearRightArrow">@drawable/icon_next</item>
+        <item name="bgNotifyDialog">@color/white</item>
+        <item name="progressColor">@color/saas_colorPrimary</item>
+        <item name="successIcon">@drawable/ic_succeed</item>
+        <item name="failIcon">@drawable/ic_failed</item>
+        <item name="textProgress">@color/text_loading</item>
+        <item name="textSuccess">@color/text_loading</item>
+        <item name="textFail">@color/text_payment_failed</item>
+        <item name="textExtraMessage">@color/text_accepted_subtitle</item>
+        <item name="iconPwlocal">@drawable/local</item>
+    </style>
+
+    <style name="style_ps_name">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:textColor">?textProductInfo</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ps_icon">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <style name="cc_form_edittext">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">?bgInputForm</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:textColor">?textInputForm</item>
+        <item name="android:textColorHint">@color/input_form_error</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_mint_form">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:inputType">number</item>
+        <item name="android:imeOptions">actionNext|flagNoExtractUi</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?textInputForm</item>
+        <item name="android:background">?bgInputForm</item>
+    </style>
+
+    <style name="saas_ps_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:background">?bgPsButton</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+</resources>

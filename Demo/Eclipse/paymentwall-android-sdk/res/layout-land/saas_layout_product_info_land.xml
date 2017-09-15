@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="140dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_product_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_product_info_land"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saas_textPrimary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:text="$40.00" />
+
+            <FrameLayout
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp">
+
+                <ImageView
+                    android:id="@+id/ivProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="3dp" />
+
+            </FrameLayout>
+
+            <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+                android:id="@+id/tvProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:textColor="@color/text_product_name"
+                android:textSize="14sp"
+                tools:text="Shields for Lorem Ipsum" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_product_info_oval_land" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/transparent"/>
+
+    </RelativeLayout>
+</LinearLayout>

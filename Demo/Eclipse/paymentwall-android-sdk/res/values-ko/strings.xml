@@ -1,0 +1,19 @@
+<resources>
+    <string name="confirm_payment">결제 수단 확인</string>
+    <string name="secured_by_pw">Paymentwall을 통한 안전한 결제 © %1$s</string>
+
+    <string name="title_local_payment">지역별 결제수단</string>
+    <string name="title_brick">신용카드/직불카드</string>
+    <string name="title_mobiamo">SMS</string>
+    <string name="title_mint">선불카드</string>
+
+    <string name="payment_unsuccessful">결제 실패...</string>
+    <string name="payment_unsuccessful_message">죄송합니다. 다시 한 번 시도해 주시가 바랍니다.</string>
+    <string name="term_alert">이용약관과 기타 조항에 동의해 주시기 바랍니다</string>
+
+    <string name="payment_accepted">결제가 승인되었습니다.</string>
+    <string name="redirecting_to">%1$s 으로(로) 돌아갑니다</string>
+
+    <string name="initialize_request">요청사항 설정 중...</string>
+
+</resources>

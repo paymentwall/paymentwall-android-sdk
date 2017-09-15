@@ -1,0 +1,20 @@
+<resources>
+    <string name="confirm_payment">Подтверждение платежа</string>
+    <string name="secured_by_pw">Платеж защищен Paymentwall © %1$s</string>
+
+    <string name="title_local_payment">"Местные способы оплаты (if payments = methods)
+Местные платежи"</string>
+    <string name="title_brick">Кредитная/Дебетовая карточка</string>
+    <string name="title_mobiamo">SMS</string>
+    <string name="title_mint">Предоплаченная карточка</string>
+
+    <string name="payment_unsuccessful">Payment unsuccessful...</string>
+    <string name="payment_unsuccessful_message">Sorry. Please try again</string>
+    <string name="term_alert">Please accept our terms and other agreements</string>
+
+    <string name="payment_accepted">Payment accepted!</string>
+    <string name="redirecting_to">Redirecting to</string>
+
+    <string name="initialize_request">Инициализация запроса</string>
+
+</resources>

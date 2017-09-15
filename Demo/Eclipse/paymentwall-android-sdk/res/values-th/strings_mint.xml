@@ -1,0 +1,73 @@
+<resources>
+    <!--<string name="enter_your_pin">Enter your ePin</string>-->
+    <string name="confirm">ยืนยัน</string>
+
+    <!--Dialog waiting-->
+    <string name="timeout_connnection">การเชื่อมต่อหมดเวลาแล้ว</string>
+    <string name="payment_error">ความผิดในการชำระเงิน</string>
+
+    <string name="enter_your_pin">เข้า ePin</string>
+    <string name="agreement">ข้าพเจ้ายอมรับข้อตกลงและนโยบายความเป็นส่วนตัว</string>
+
+    <!--Dialog help-->
+
+    <string name="terms">ข้อกำหนด</string>
+    <string name="privacy_policy">นโยบายความเป็นส่วนตัว</string>
+
+    <!--Dialog payment successful-->
+
+    <string name="status">สถานะ</string>
+    <string name="error">ความผิดพลาด</string>
+    <string name="unknown_error">ผิดพลาดโดยไม่ทราบสาเหตุ</string>
+    <string name="err_mint_pin_16">ความผิดพลาด รหัส ePin ต้องมีตัวเลข 16 หลัก</string>
+    <string name="service_unavailable">ระบบขัดข้อง กรุณาลองใหม่ในภายหลัง</string>
+    <string name="check_internet_connection">กรุณาตรวจการเชื่อมต่อสอบอินเตอร์เน็ตของคุณ</string>
+    <string name="err_system_time_incorrect">การชำระเงินถูกยกเลิก เนื่องจากเวลาในระบบของคุณไม่ตรงกับปัจจุบัน กรุณาตั้งค่าเวลาใหม่!</string>
+
+    <string name="card_number_hint">เลขบัตร</string>
+    <string name="exp_date_hint">วันหมดอายุ</string>
+    <string name="cvv_hint">การตวจสอบมวลค่าบัตร</string>
+    <string name="email_hint">อีเมล</string>
+
+    <!--Layout DatePicker-->
+    <string name="choose_expiration_date">เลือกวันหมดอายุ</string>
+    <string name="month_1">ม.ค.</string>
+    <string name="month_2">ก.พ.</string>
+    <string name="month_3">มี.ค.</string>
+    <string name="month_4">เม.ย.</string>
+    <string name="month_5">อาจ</string>
+    <string name="month_6">มิ.ย.</string>
+    <string name="month_7">ก.ค.</string>
+    <string name="month_8">ส.ค.</string>
+    <string name="month_9">ก.ย.</string>
+    <string name="month_10">ต.ค.</string>
+    <string name="month_11">พ.ย.</string>
+    <string name="month_12">ธ.ค.</string>
+    <string name="month_1_full">มกราคม</string>
+    <string name="month_2_full">กุมภาพันธ์</string>
+    <string name="month_3_full">มีนาคม</string>
+    <string name="month_4_full">เมษายน</string>
+    <string name="month_5_full">อาจ</string>
+    <string name="month_6_full">มิถุนายน</string>
+    <string name="month_7_full">กรกฎาคม</string>
+    <string name="month_8_full">สิงหาคม</string>
+    <string name="month_9_full">กันยายน</string>
+    <string name="month_10_full">ตุลาคม</string>
+    <string name="month_11_full">พฤศจิกายน</string>
+    <string name="month_12_full">ธันวาคม</string>
+
+    <string name="err_invalid_card_number">เลขบัตรไม่ถูกต้อง</string>
+    <string name="err_invalid_expiration_date">วันหมดอายุผิดพลาด</string>
+    <string name="error_invalid_cvv">การตวจสอบมวลค่าบัตรไม่ถูกต้อง</string>
+    <string name="error_invalid_email">อีเมลไม่ถูกต้อง</string>
+
+    <string name="description_roaming_state">(คุณกำลังเปิดโรมมิ่ง ผู้ให้บริการของคุณอาจเก็บค่าบริการเพิ่มเติมสำหรับการส่งข้อความ)</string>
+
+    <string name="payment_not_supported_message">ขออภัย วิธีการชำระเงินนี้ไม่สามารถใช้ได้ในประเทศของคุณ</string>
+
+    <string name="err_no_internet_connection">กรุณาตรวจการเชื่อมต่อสอบอินเตอร์เน็ตของคุณ</string>
+    <string name="err_no_sim">ไม่พบซิมการ์ด</string>
+
+    <string name="pricepoint_confirmation">%1$s จะจ่ายในบัญชีมือถือของท่าน</string>
+
+</resources>

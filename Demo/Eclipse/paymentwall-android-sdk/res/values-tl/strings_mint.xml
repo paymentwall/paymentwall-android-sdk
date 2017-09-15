@@ -1,0 +1,73 @@
+<resources>
+    <!--<string name="enter_your_pin">Enter your ePin</string>-->
+    <string name="confirm">Kumpirma</string>
+
+    <!--Dialog waiting-->
+    <string name="timeout_connnection">Timeout connection</string>
+    <string name="payment_error">Error sa Pagbayad</string>
+
+    <string name="enter_your_pin">Ipasok ang ePin</string>
+    <string name="agreement">Ako ay sumasang-ayon sa mga termino ng serbisyo at patakaran sa pagkapribado</string>
+
+    <!--Dialog help-->
+
+    <string name="terms">Mga termino</string>
+    <string name="privacy_policy">Patakaran sa Pagkapribado</string>
+
+    <!--Dialog payment successful-->
+
+    <string name="status">Estado</string>
+    <string name="error">Error</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="err_mint_pin_16">Error! Anf MINT ePIN ay dapat may 16 na numero</string>
+    <string name="service_unavailable">Ang serbisyo ay hindi magagamit. Subukang muli mamaya.</string>
+    <string name="check_internet_connection">Paki check ang iyong internet connection</string>
+    <string name="err_system_time_incorrect">Ang paybayad ay hindi maaaring gawin dahil ang oras sa iyong sistema ay hindi tama. Mangyaring i-update ito!</string>
+
+    <string name="card_number_hint">Numero ng Card</string>
+    <string name="exp_date_hint">Petsa ng Expiration</string>
+    <string name="cvv_hint">CVV</string>
+    <string name="email_hint">Email address</string>
+
+    <!--Layout DatePicker-->
+    <string name="choose_expiration_date">Pumili ng expiration date</string>
+    <string name="month_1">1</string>
+    <string name="month_2">2</string>
+    <string name="month_3">3</string>
+    <string name="month_4">4</string>
+    <string name="month_5">5</string>
+    <string name="month_6">6</string>
+    <string name="month_7">7</string>
+    <string name="month_8">8</string>
+    <string name="month_9">9</string>
+    <string name="month_10">10</string>
+    <string name="month_11">11</string>
+    <string name="month_12">12</string>
+    <string name="month_1_full">Enero</string>
+    <string name="month_2_full">Pebrero</string>
+    <string name="month_3_full">Marso</string>
+    <string name="month_4_full">Abril</string>
+    <string name="month_5_full">Mayo</string>
+    <string name="month_6_full">Hunyo</string>
+    <string name="month_7_full">Hulyo</string>
+    <string name="month_8_full">Agosto</string>
+    <string name="month_9_full">Setyembre</string>
+    <string name="month_10_full">Oktubre</string>
+    <string name="month_11_full">Nobyembre</string>
+    <string name="month_12_full">Disyembre</string>
+
+    <string name="err_invalid_card_number">Maling Numero ng Card</string>
+    <string name="err_invalid_expiration_date">Di-wastong petsa ng expiration</string>
+    <string name="error_invalid_cvv">Maling CVV</string>
+    <string name="error_invalid_email">Maling Email</string>
+
+    <string name="description_roaming_state">(Ikaw ay naka-roaming, ang carrier messaging rate maaaring mag-apply sa pagbabayad na ito)</string>
+
+    <string name="payment_not_supported_message">Ang pamamaraan ng pagbabayad na ito ay hindi suportado sa iyong bansa</string>
+
+    <string name="err_no_internet_connection">Paki check ang iyong internet connection</string>
+    <string name="err_no_sim">Walang sim card na natagpuan</string>
+
+    <string name="pricepoint_confirmation">%1$s ay sisingilin sa iyong phone bill</string>
+
+</resources>

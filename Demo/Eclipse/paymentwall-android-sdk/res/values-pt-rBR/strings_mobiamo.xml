@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy">Comprar</string>
+    <string name="need_some_help">Precisa de ajuda?</string>
+    <string name="back">Back</string>
+    <string name="payment_confirmation">Payment Confirmation</string>
+    <string name="initiate_purchase_message">Iniciando pagamento...</string>
+    <string name="close">Fechar</string>
+    <string name="help">Ajuda</string>
+
+    <string name="confirmation_message">Você quer comprar &lt;b>%1$s&lt;/b> por &lt;b>%2$s&lt;/b>?</string>
+    <string name="description_message">%1$s será cobrado do seu saldo do celular</string>
+
+    <string name="payment_not_supported_title">Erro no pagamento</string>
+    <string name="payment_failed_message">Um erro ocorrou durante o pagamento</string>
+
+    <string name="choose_package">Choose package</string>
+    <string name="make_payment">Make payment</string>
+    <string name="_for">for</string>
+    <string name="next">Next</string>
+
+</resources>

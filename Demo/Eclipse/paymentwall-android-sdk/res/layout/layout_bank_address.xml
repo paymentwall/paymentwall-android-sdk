@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/llAddress"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <com.paymentwall.pwunifiedsdk.ui.ProximaNovaLightTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_address_1"
+        android:textSize="12sp"
+        android:textColor="?textCopyright" />
+
+    <com.paymentwall.pwunifiedsdk.ui.ProximaNovaLightTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="@string/bank_address_2"
+        android:textColor="?textCopyright" />
+</LinearLayout>

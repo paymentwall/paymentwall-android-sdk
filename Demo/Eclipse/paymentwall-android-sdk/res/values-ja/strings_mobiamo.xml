@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy">購入</string>
+    <string name="need_some_help">お手伝いしましょうか？</string>
+    <string name="back">Back</string>
+    <string name="payment_confirmation">Payment Confirmation</string>
+    <string name="initiate_purchase_message">購入を初期化します。...</string>
+    <string name="close">閉じる</string>
+    <string name="help">ヘルプ</string>
+    <string name="cancel">キャンセル</string>
+
+    <string name="confirmation_message">{&lt;b>%2$s&lt;/b>円で&lt;b>%1$s&lt;/b>を購入しますか？</string>
+    <string name="description_message">携帯に電子マネーとして%1$s(円)をチャージしますか？</string>
+
+    <string name="payment_not_supported_title">決済が失敗しました。</string>
+    <string name="payment_failed_message">"購入の途中一つのエラーが起られました"</string>
+
+    <string name="choose_package">Choose package</string>
+    <string name="make_payment">Make payment</string>
+    <string name="_for">円で</string>
+    <string name="next">Next</string>
+</resources>

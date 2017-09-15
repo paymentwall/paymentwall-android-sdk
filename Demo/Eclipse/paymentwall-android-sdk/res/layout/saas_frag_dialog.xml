@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llDialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cc4a494a"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:visibility="gone">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llBgDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bgr_successful_dialog"
+            android:clickable="true"
+            android:gravity="center_horizontal"
+            android:minHeight="239dp"
+            android:minWidth="331dp"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:paddingTop="28dp">
+
+            <FrameLayout
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.paymentwall.pwunifiedsdk.ui.WaveView
+                    android:id="@+id/waveView"
+                    android:layout_width="92dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/ivDialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_failed"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <com.paymentwall.pwunifiedsdk.ui.ProximaNovaBoldTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:text="@string/payment_unsuccessful"
+                android:textColor="?textFail"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivStarsLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_stars_left" />
+
+                <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+                    android:id="@+id/tvMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/payment_unsuccessful_message"
+                    android:textColor="?textExtraMessage"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/ivStarsRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_stars_right" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

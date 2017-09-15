@@ -1,0 +1,19 @@
+<resources>
+    <string name="confirm_payment">ยืนยันการชำระเงิน</string>
+    <string name="secured_by_pw">การชำระเงินที่ปลอดภัยโดย Paymentwall © %1$s</string>
+
+    <string name="title_local_payment">การชำระเงินท้องถิ่น</string>
+    <string name="title_brick">บัตรเครดิต/บัตรเดบิต</string>
+    <string name="title_mobiamo">SMS</string>
+    <string name="title_mint">บัตรเติมเงิน</string>
+
+    <string name="payment_unsuccessful">การค้าขายไม่สำเร็จ</string>
+    <string name="payment_unsuccessful_message">ขออภัย กรุณาลองใหม่อีกครั้ง</string>
+    <string name="term_alert">กรุณายินยอมรับเงื่อนไขและข้อตกลงอื่นๆของเรา</string>
+
+    <string name="payment_accepted">เพิ่มการชำระเงินแล้ว!</string>
+    <string name="redirecting_to">กำลังกลับไปที่ %1$s</string>
+
+    <string name="initialize_request">ลงนามขั้นแรกคำร้อง...</string>
+
+</resources>

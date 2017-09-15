@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy">Mua</string>
+    <string name="need_some_help">Bạn cần giúp đỡ?</string>
+    <string name="back">Quay lại</string>
+    <string name="payment_confirmation">Xác nhận thanh toán</string>
+    <string name="initiate_purchase_message">Đang khởi tạo thanh toán...</string>
+    <string name="close">Đóng</string>
+    <string name="help">Giúp đỡ</string>
+    <string name="cancel">Hủy bỏ</string>
+
+    <string name="confirmation_message">Bạn có muốn mua &lt;b>%1$s&lt;/b> với &lt;b>%2$s&lt;/b> không?</string>
+    <string name="description_message">%1$s sẽ được trừ vào tài khoản của bạn</string>
+
+    <string name="payment_not_supported_title">Giao dịch thất bại</string>
+    <string name="payment_failed_message">Đã có lỗi trong quá trình giao dịch</string>
+
+    <string name="choose_package">Choose package</string>
+    <string name="make_payment">Make payment</string>
+    <string name="_for">for</string>
+    <string name="next">Next</string>
+</resources>

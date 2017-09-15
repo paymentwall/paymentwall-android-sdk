@@ -1,0 +1,11 @@
+<resources>
+    <string name="enter_your_pin">Inserire il proprio ePin</string>
+    <string name="agreement">Accetto le condizioni di utilizzo e sulla privacy</string>
+
+    <!--Dialog help-->
+
+    <!--Dialog waiting-->
+
+    <!--Dialog payment successful-->
+
+</resources>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="confirm_payment">Confirm payment</string>
+    <string name="secured_by_pw">Secured Payment by Paymentwall © %1$s</string>
+    <string name="bank_address_1">Skru012bveru nov., Skru012bveri, Daugavas iela 142-14,Latvia</string>
+    <string name="bank_address_2">Unit 701-702 7/F, 8 Jordan road, Yaumati Kowloon, Hong Kong</string>
+
+    <string name="title_local_payment">Local Payments</string>
+    <string name="title_brick">Credit/Debit Card</string>
+    <string name="title_mobiamo">SMS</string>
+    <string name="title_mint">Prepaid Card</string>
+    <string name="title_pwlocal">Local Payment Methods</string>
+
+    <string name="payment_unsuccessful">Payment unsuccessful...</string>
+    <string name="payment_unsuccessful_message">Sorry. Please try again</string>
+    <string name="term_alert">Please accept our terms and other agreements</string>
+    <string name="issue_description">Issue Description</string>
+
+    <string name="payment_accepted">Payment accepted!</string>
+    <string name="redirecting_to">Redirecting to %1$s</string>
+
+    <string name="initialize_request">Initializing request...</string>
+    <string name="total">Total</string>
+
+</resources>

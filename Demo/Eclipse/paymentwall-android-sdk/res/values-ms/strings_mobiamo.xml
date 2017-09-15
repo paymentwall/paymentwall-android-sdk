@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy">Beli</string>
+    <string name="need_some_help">Perlukan bantuan?</string>
+    <string name="back">Kembali</string>
+    <string name="payment_confirmation">Pembayaran disahkan</string>
+    <string name="initiate_purchase_message">memulakan pembelian</string>
+    <string name="close">Rapat</string>
+    <string name="help">Bantuan</string>
+
+    <string name="confirmation_message">Adakah anda mahu beli &lt;b>%1$s&lt;/b> untuk &lt;b>%2$s&lt;/b>?</string>
+    <string name="description_message">&lt;b>%1$s&lt;/b> Akan dicaj pada bil telefon anda</string>
+
+    <string name="payment_not_supported_title">Pembayaran gagal</string>
+    <string name="payment_failed_message">Ralat semasa pembelian</string>
+
+    <string name="choose_package">Choose package</string>
+    <string name="make_payment">Make payment</string>
+    <string name="_for">for</string>
+    <string name="next">Next</string>
+</resources>

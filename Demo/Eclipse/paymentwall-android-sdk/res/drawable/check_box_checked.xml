@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/check_box_normal" android:gravity="center"/>
+    <item android:drawable="@drawable/check_box_tick" android:gravity="center" android:bottom="8dp" android:top="8dp" android:left="8dp" android:right="8dp"/>
+</layer-list>

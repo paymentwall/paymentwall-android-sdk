@@ -1,0 +1,11 @@
+<resources>
+    <string name="enter_your_pin">Βάλτε τον κωδικό ePin σας</string>
+    <string name="agreement">I accept Terms and Privacy Policy</string>
+
+    <!--Dialog help-->
+
+    <!--Dialog waiting-->
+
+    <!--Dialog payment successful-->
+
+</resources>

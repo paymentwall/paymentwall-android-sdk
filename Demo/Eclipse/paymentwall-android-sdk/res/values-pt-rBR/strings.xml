@@ -1,0 +1,19 @@
+<resources>
+    <string name="confirm_payment">Confirmar pagamento</string>
+    <string name="secured_by_pw">Pagamento seguro via Paymentwall © %1$s</string>
+
+    <string name="title_local_payment">Métodos de pagamento locais</string>
+    <string name="title_brick">Cartão de crédito/débito</string>
+    <string name="title_mobiamo">SMS</string>
+    <string name="title_mint">Cartão pré-pago</string>
+
+    <string name="payment_unsuccessful">Erro no pagamento...</string>
+    <string name="payment_unsuccessful_message">Sorry. Please try again</string>
+    <string name="term_alert">Please accept our terms and other agreements</string>
+
+    <string name="payment_accepted">Payment accepted!</string>
+    <string name="redirecting_to">Redirecting to</string>
+
+    <string name="initialize_request">Iniciando pagamento...</string>
+
+</resources>

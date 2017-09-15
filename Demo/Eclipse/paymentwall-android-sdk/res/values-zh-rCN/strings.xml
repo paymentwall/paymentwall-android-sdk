@@ -1,0 +1,19 @@
+<resources>
+    <string name="confirm_payment">确认支付</string>
+    <string name="secured_by_pw">由Paymentwall提供的安全支付方式 © %1$s</string>
+
+    <string name="title_local_payment">本地支付</string>
+    <string name="title_brick">信用卡</string>
+    <string name="title_mobiamo">SMS</string>
+    <string name="title_mint">预付卡</string>
+
+    <string name="payment_unsuccessful">支付失败...</string>
+    <string name="payment_unsuccessful_message">对不起，请重试</string>
+    <string name="term_alert">请接受我们的协议条款</string>
+
+    <string name="payment_accepted">支付成功!</string>
+    <string name="redirecting_to">转向 %1$s</string>
+
+    <string name="initialize_request">正在初始化请求...</string>
+
+</resources>

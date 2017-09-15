@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="enter_your_pin">ePin Kodu girin</string>
+    <string name="agreement">I accept Terms and Privacy Policy</string>
+
+    <!--Dialog help-->
+
+    <!--Dialog waiting-->
+
+    <!--Dialog payment successful-->
+
+</resources>

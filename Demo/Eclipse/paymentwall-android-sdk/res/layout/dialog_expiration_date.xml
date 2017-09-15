@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llExpirationDate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cc4a494a"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:id="@+id/llExpDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/saas_bg_expiration_date_dialog"
+        android:clickable="true"
+        android:minWidth="330dp"
+        android:orientation="vertical"
+        android:paddingBottom="24dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="24dp">
+
+        <com.paymentwall.pwunifiedsdk.ui.ProximaNovaBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="@string/choose_expiration_date"
+            android:textColor="?textExpDialog"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/ivPrevious"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentLeft="true"
+                android:padding="4dp"
+                android:src="?attr/yearLeftArrow" />
+
+            <com.paymentwall.pwunifiedsdk.ui.ProximaNovaBoldTextView
+                android:id="@+id/tvYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="4dp"
+                android:text="2019"
+                android:textColor="?textExpDialog"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivNext"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="4dp"
+                android:layout_alignParentRight="true"
+                android:src="?attr/yearRightArrow" />
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gvMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:horizontalSpacing="4dp"
+            android:listSelector="#00000000"
+            android:numColumns="4"
+            android:scrollbars="none"
+            android:verticalSpacing="4dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

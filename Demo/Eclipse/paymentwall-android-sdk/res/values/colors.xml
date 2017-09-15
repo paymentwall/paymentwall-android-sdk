@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--PwUnified-->
+    <color name="saas_colorPrimary">#fbbd30</color>
+    <color name="saas_colorPrimaryPressed">#c88d04</color>
+    <color name="saas_textPrimary">#202b43</color>
+    <color name="saas_textSecondary">#4d202b43</color>
+    <color name="text_confirm">#ffffff</color>
+    <color name="text_redirecting">#b3202b43</color>
+    <color name="text_loading">#33cdc6</color>
+    <color name="text_payment_failed">#f06050</color>
+    <color name="text_product_name">#3a3a3a</color>
+    <color name="text_accepted_subtitle">#715966</color>
+    <color name="text_mint_form">#363636</color>
+    <color name="bg_main">#fafbfd</color>
+    <color name="white">#ffffff</color>
+    <color name="btn_ps_stroke">#eef0f3</color>
+    <color name="bg_btn_ps_pressed">#33fbbd30</color>
+    <color name="input_form_stroke">#e8eaee</color>
+    <color name="input_form_error">#ee4745</color>
+    <color name="btn_confirm">#fbbd30</color>
+    <color name="btn_confirm_pressed">#c88d04</color>
+    <color name="btn_confirm_disabled">#1a202b43</color>
+    <color name="bg_edittext_feedback">#f4f6fb</color>
+    <color name="text_submit">#4285f4</color>
+
+
+    <!--Brick-->
+    <color name="transparent">#00000000</color>
+    <color name="black_transparent">#30000000</color>
+    <color name="black_text">#979797</color>
+    <color name="agreement_text">#bdbdbd</color>
+    <color name="bg_expiration_date">#fbedcc</color>
+    <!--date picker-->
+    <color name="expire_year_primary_text">#000000</color>
+    <color name="expire_year_secondary_text">#c0c0c0</color>
+
+    <!--Mobiamo-->
+    <color name="primary_color">#2196F3</color>
+    <color name="primary_color_pressed">#0C7CD8</color>
+    <color name="text_description">#A7A7A7</color>
+    <color name="btn_help_pressed">#D9F2F2</color>
+    <color name="black">#000000</color>
+
+
+</resources>

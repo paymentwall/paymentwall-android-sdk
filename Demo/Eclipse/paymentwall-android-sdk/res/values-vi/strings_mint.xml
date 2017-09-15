@@ -1,0 +1,73 @@
+<resources>
+    <!--<string name="enter_your_pin">Enter your ePin</string>-->
+    <string name="confirm">Xác nhận</string>
+
+    <!--Dialog waiting-->
+    <string name="timeout_connnection">Quá thời gian kết nối</string>
+    <string name="payment_error">Giao dịch có lỗi</string>
+
+    <string name="enter_your_pin">Nhập mã ePin của bạn</string>
+    <string name="agreement">Tôi đồng ý với các điều khoản và chính sách riêng tư</string>
+
+    <!--Dialog help-->
+
+    <string name="terms">Điều khoản</string>
+    <string name="privacy_policy">Chính sách riêng tư</string>
+
+    <!--Dialog payment successful-->
+
+    <string name="status">Trạng thái</string>
+    <string name="error">Lỗi</string>
+    <string name="unknown_error">Lỗi không xác định</string>
+    <string name="err_mint_pin_16">Lỗi! Mã PIN phải đủ 16 chữ số</string>
+    <string name="service_unavailable">Dịch vụ đang không khả dụng. Xin hãy thử lại sau.</string>
+    <string name="check_internet_connection">Xin hãy kiểm tra lại kết nối internet của bạn</string>
+    <string name="err_system_time_incorrect">Giao dịch không thể tiến hành vì giờ hệ thống đang không chính xác. Xin hãy cập nhật lại!</string>
+
+    <string name="card_number_hint">Số thẻ</string>
+    <string name="exp_date_hint">Ngày hết hạn</string>
+    <string name="cvv_hint">CVV</string>
+    <string name="email_hint">Địa chỉ email</string>
+
+    <!--Layout DatePicker-->
+    <string name="choose_expiration_date">Chọn ngay hết hạn</string>
+    <string name="month_1">1</string>
+    <string name="month_2">2</string>
+    <string name="month_3">3</string>
+    <string name="month_4">4</string>
+    <string name="month_5">5</string>
+    <string name="month_6">6</string>
+    <string name="month_7">7</string>
+    <string name="month_8">8</string>
+    <string name="month_9">9</string>
+    <string name="month_10">10</string>
+    <string name="month_11">11</string>
+    <string name="month_12">12</string>
+    <string name="month_1_full">Tháng 1</string>
+    <string name="month_2_full">Tháng 2</string>
+    <string name="month_3_full">Tháng 3</string>
+    <string name="month_4_full">Tháng 4</string>
+    <string name="month_5_full">Tháng 5</string>
+    <string name="month_6_full">Tháng 6</string>
+    <string name="month_7_full">Tháng 7</string>
+    <string name="month_8_full">Tháng 8</string>
+    <string name="month_9_full">Tháng 9</string>
+    <string name="month_10_full">Tháng 10</string>
+    <string name="month_11_full">Tháng 11</string>
+    <string name="month_12_full">Tháng 12</string>
+
+    <string name="err_invalid_card_number">Thông tin thẻ không hợp lệ</string>
+    <string name="err_invalid_expiration_date">Ngày hết hạn không hợp lệ</string>
+    <string name="error_invalid_cvv">CVV không hợp lệ</string>
+    <string name="error_invalid_email">Email không hợp lệ</string>
+
+    <string name="description_roaming_state">(Bạn đang được chuyển vùng, cước tin nhắn phát sinh có thể được tính vào giao dịch này)</string>
+
+    <string name="payment_not_supported_message">Phương thức thanh toán này không được hỗ trợ tại đất nước của bạn</string>
+
+    <string name="err_no_internet_connection">Không có kết nối internet. Xin hãy kiểm tra lại thiết bị của bạn.</string>
+    <string name="err_no_sim">Không tìm thấy SIM.</string>
+
+    <string name="pricepoint_confirmation">%1$s sẽ được trừ vào tài khoản của bạn</string>
+
+</resources>

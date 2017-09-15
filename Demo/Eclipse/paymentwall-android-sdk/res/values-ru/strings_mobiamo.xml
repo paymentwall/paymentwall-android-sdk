@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy">Купить</string>
+    <string name="need_some_help">Нужна помощь?</string>
+    <string name="back">Back</string>
+    <string name="payment_confirmation">Payment Confirmation</string>
+    <string name="initiate_purchase_message">Initiating purchase...</string>
+    <string name="close">Закрыть</string>
+    <string name="help">Помощь</string>
+
+    <string name="confirmation_message">Вы хотите купить &lt;b>%1$s&lt;/b> за &lt;b>%2$s&lt;/b>?</string>
+    <string name="description_message">&lt;b>%1$s&lt;/b> будет списано со света вашего мобильного телефона</string>
+
+    <string name="payment_not_supported_title">Платеж не прошел</string>
+    <string name="payment_failed_message">"Произошла ошибка при покупке"</string>
+
+    <string name="choose_package">Choose package</string>
+    <string name="make_payment">Make payment</string>
+    <string name="_for">за</string>
+    <string name="next">Next</string>
+</resources>

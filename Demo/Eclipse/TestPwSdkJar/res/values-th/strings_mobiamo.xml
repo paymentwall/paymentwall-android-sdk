@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy">ซื้อ</string>
+    <string name="need_some_help">ต้องการความช่วยเหลือหรือเปล่า</string>
+    <string name="back">ย้อนกลับ</string>
+    <string name="payment_confirmation">ยืนยันการชำระเงิน</string>
+    <string name="initiate_purchase_message">ลงนามขั้นแรกการค้าขาย...</string>
+    <string name="close">ปิด</string>
+    <string name="help">วิธีใช้</string>
+
+    <string name="confirmation_message">ท่านอยากจ่าย &lt;b>%2$s&lt;/b> ซื้อ &lt;b>%1$s&lt;/b> ไหม?</string>
+    <string name="description_message">%1$s จะจ่ายในบัญชีมือถือของท่าน</string>
+
+    <string name="payment_not_supported_title">การค้าขายไม่สำเร็จ</string>
+    <string name="payment_failed_message">"เกิดความผิดพลาดเมื่อค้าขาย"</string>
+
+    <string name="choose_package">Choose package</string>
+    <string name="make_payment">Make payment</string>
+    <string name="_for">for</string>
+    <string name="next">Next</string>
+</resources>

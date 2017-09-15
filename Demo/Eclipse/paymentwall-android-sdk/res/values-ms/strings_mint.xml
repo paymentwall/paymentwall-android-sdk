@@ -1,0 +1,73 @@
+<resources>
+    <!--<string name="enter_your_pin">Enter your ePin</string>-->
+    <string name="confirm">Sahkan</string>
+
+    <!--Dialog waiting-->
+    <string name="timeout_connnection">Sambungan tamat</string>
+    <string name="payment_error">Ralat pembayaran</string>
+
+    <string name="enter_your_pin">Masukkan e-pin anda</string>
+    <string name="agreement">Saya terima terma dan polisi privasi</string>
+
+    <!--Dialog help-->
+
+    <string name="terms">Terma</string>
+    <string name="privacy_policy">Polisi Privasi</string>
+
+    <!--Dialog payment successful-->
+
+    <string name="status">Status</string>
+    <string name="error">Ralat</string>
+    <string name="unknown_error">Ralat tidak diketahui</string>
+    <string name="err_mint_pin_16">Ralat! ePin MINT mesti mempunyai 16 aksara</string>
+    <string name="service_unavailable">Perkhidmatan adalah tidak tersedia. Sila cuba sebentar lagi</string>
+    <string name="check_internet_connection">Sila periksa sambungan Internet anda</string>
+    <string name="err_system_time_incorrect">Pembayaran tidak dapat dilakukan kerana masa sistem adalah salah. Sila kemaskini sistem</string>
+
+    <string name="card_number_hint">Nombor kad</string>
+    <string name="exp_date_hint">Tarikh luput</string>
+    <string name="cvv_hint">PNK</string>
+    <string name="email_hint">Alamat Emel</string>
+
+    <!--Layout DatePicker-->
+    <string name="choose_expiration_date">Pilih tarikh tamat tempoh</string>
+    <string name="month_1">Jan</string>
+    <string name="month_2">Feb</string>
+    <string name="month_3">Mac</string>
+    <string name="month_4">Apr</string>
+    <string name="month_5">Mei</string>
+    <string name="month_6">Jun</string>
+    <string name="month_7">Jul</string>
+    <string name="month_8">Ogo</string>
+    <string name="month_9">Sep</string>
+    <string name="month_10">Okt</string>
+    <string name="month_11">Nov</string>
+    <string name="month_12">Dis</string>
+    <string name="month_1_full">Januari</string>
+    <string name="month_2_full">Februari</string>
+    <string name="month_3_full">Mac</string>
+    <string name="month_4_full">Apri</string>
+    <string name="month_5_full">Mei</string>
+    <string name="month_6_full">Jun</string>
+    <string name="month_7_full">Julai</string>
+    <string name="month_8_full">Ogos</string>
+    <string name="month_9_full">September</string>
+    <string name="month_10_full">Oktober</string>
+    <string name="month_11_full">November</string>
+    <string name="month_12_full">Disember</string>
+
+    <string name="err_invalid_card_number">Nombor kad tidak sah</string>
+    <string name="err_invalid_expiration_date">Tarikh tamat tempoh yang tidak sah</string>
+    <string name="error_invalid_cvv">PNK tidak sah</string>
+    <string name="error_invalid_email">Emel tidak sah</string>
+
+    <string name="description_roaming_state">(Anda berada dalam perantauan, kadar bayaran bagi pembawa mesej ini mungkin akan dikenakan)</string>
+
+    <string name="payment_not_supported_message">Cara pembayaran ini tidak dterima di negara anda</string>
+
+    <string name="err_no_internet_connection">Sila periksa sambungan Internet anda</string>
+    <string name="err_no_sim">Nombor kad Sim tidak dijumpai</string>
+
+    <string name="pricepoint_confirmation">&lt;b>%1$s&lt;/b> akan dicaj pada bil telefon anda</string>
+
+</resources>

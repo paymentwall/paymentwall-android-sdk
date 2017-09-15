@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PaymentwallSdk">
+        <attr name="colorMain" format="color" />
+        <attr name="textMain" format="color" />
+        <attr name="mainBackground" format="integer" />
+        <attr name="bgProductInfo" format="color" />
+        <attr name="bgProductInfoLand" format="color" />
+        <attr name="textProductInfo" format="color" />
+        <attr name="bgPsButton" format="integer" />
+        <attr name="textPsButton" format="color" />
+        <attr name="textCopyright" format="color" />
+        <attr name="bgInputForm" format="integer" />
+        <attr name="bgInputErrorForm" format="integer" />
+        <attr name="textInputForm" format="color" />
+        <attr name="textInputErrorForm" format="color" />
+        <attr name="iconErrorForm" format="integer" />
+        <attr name="textFormTitle" format="color" />
+        <attr name="bgConfirmButton" format="integer" />
+        <attr name="textConfirmButton" format="color" />
+        <attr name="backButton" format="integer" />
+        <attr name="bgExpDialog" format="color" />
+        <attr name="textExpDialog" format="color" />
+        <attr name="monthButtonNormal" format="integer" />
+        <attr name="monthButtonPressed" format="integer" />
+        <attr name="textMonth" format="color" />
+        <attr name="yearLeftArrow" format="integer" />
+        <attr name="yearRightArrow" format="integer" />
+        <attr name="bgNotifyDialog" format="color" />
+        <attr name="progressColor" format="color" />
+        <attr name="successIcon" format="integer" />
+        <attr name="failIcon" format="integer" />
+        <attr name="textProgress" format="color" />
+        <attr name="textSuccess" format="color" />
+        <attr name="textFail" format="color" />
+        <attr name="textExtraMessage" format="color" />
+        <attr name="iconPwlocal" format="integer" />
+
+    </declare-styleable>
+
+
+    <declare-styleable name="RoundedImageView">
+        <attr name="riv_corner_radius" format="dimension" />
+        <attr name="riv_corner_radius_top_left" format="dimension" />
+        <attr name="riv_corner_radius_top_right" format="dimension" />
+        <attr name="riv_corner_radius_bottom_left" format="dimension" />
+        <attr name="riv_corner_radius_bottom_right" format="dimension" />
+        <attr name="riv_border_width" format="dimension" />
+        <attr name="riv_border_color" format="color" />
+        <attr name="riv_mutate_background" format="boolean" />
+        <attr name="riv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+        <attr name="riv_tile_mode">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
+        <attr name="riv_tile_mode_x">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
+        <attr name="riv_tile_mode_y">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="MaskedEditText">
+        <attr name="mask" format="string" />
+        <attr name="char_representation" format="string" />
+        <attr name="mask_fill" format="string" />
+    </declare-styleable>
+
+</resources>

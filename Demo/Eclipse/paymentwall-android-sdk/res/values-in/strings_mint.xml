@@ -1,0 +1,73 @@
+<resources>
+    <!--<string name="enter_your_pin">Enter your ePin</string>-->
+    <string name="confirm">Konfirmasi</string>
+
+    <!--Dialog waiting-->
+    <string name="timeout_connnection">Timeout connection</string>
+    <string name="payment_error">Kesalahan pembayaran</string>
+
+    <string name="enter_your_pin">Masukkan e-pin Anda</string>
+    <string name="agreement">Saya menerima Ketentuan dan Kebijakan Privasi</string>
+
+    <!--Dialog help-->
+
+    <string name="terms">Ketentuan</string>
+    <string name="privacy_policy">Kebijakan Privasi</string>
+
+    <!--Dialog payment successful-->
+
+    <string name="status">Status</string>
+    <string name="error">Kesalahan</string>
+    <string name="unknown_error">Error tidak dikenal</string>
+    <string name="err_mint_pin_16">Kesalahan! MINT Epin harus memiliki 16 digit</string>
+    <string name="service_unavailable">Layanan tidak tersedia. Silahkan coba lagi nanti.</string>
+    <string name="check_internet_connection">Mohon periksa koneksi internet Anda</string>
+    <string name="err_system_time_incorrect">Pembayaran tidak bisa dilakukan karena waktu sistem tidak cocok. Mohon perbarui!</string>
+
+    <string name="card_number_hint">Nomor kartu</string>
+    <string name="exp_date_hint">Tanggal kadaluarsa</string>
+    <string name="cvv_hint">CVV</string>
+    <string name="email_hint">Alamat email</string>
+
+    <!--Layout DatePicker-->
+    <string name="choose_expiration_date">Pilih tanggal habis masa berlaku</string>
+    <string name="month_1">Jan</string>
+    <string name="month_2">Feb</string>
+    <string name="month_3">Mar</string>
+    <string name="month_4">Apr</string>
+    <string name="month_5">Mun</string>
+    <string name="month_6">Jun</string>
+    <string name="month_7">Jul</string>
+    <string name="month_8">Aug</string>
+    <string name="month_9">Sep</string>
+    <string name="month_10">Okt</string>
+    <string name="month_11">Nov</string>
+    <string name="month_12">Des</string>
+    <string name="month_1_full">Januari</string>
+    <string name="month_2_full">Februari</string>
+    <string name="month_3_full">Maret</string>
+    <string name="month_4_full">April</string>
+    <string name="month_5_full">Mungkin</string>
+    <string name="month_6_full">Juni</string>
+    <string name="month_7_full">Juli</string>
+    <string name="month_8_full">Agustus</string>
+    <string name="month_9_full">September</string>
+    <string name="month_10_full">Oktober</string>
+    <string name="month_11_full">November</string>
+    <string name="month_12_full">Desember</string>
+
+    <string name="err_invalid_card_number">Nomor kartu tidak valid</string>
+    <string name="err_invalid_expiration_date">Tanggal habis masa berlaku tidak valid</string>
+    <string name="error_invalid_cvv">CVV yang tidak valid</string>
+    <string name="error_invalid_email">Email tidak valid</string>
+
+    <string name="description_roaming_state">(Anda sedang berada dalam area roaming/di luar jaringan, tarif perpesanan operator mungkin berlaku untuk pembayaran ini )</string>
+
+    <string name="payment_not_supported_message">Metode pembayaran ini tidak didukung di negara Anda</string>
+
+    <string name="err_no_internet_connection">Mohon periksa koneksi internet Anda</string>
+    <string name="err_no_sim">Kartu SIM tidak ditemukan</string>
+
+    <string name="pricepoint_confirmation">%1$s akan dibebankan ke tagihan ponsel Anda</string>
+
+</resources>

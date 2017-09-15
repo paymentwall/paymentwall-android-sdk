@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy">Bumili</string>
+    <string name="need_some_help">Kailangan ng tulong?</string>
+    <string name="back">Back</string>
+    <string name="payment_confirmation">Payment Confirmation</string>
+    <string name="initiate_purchase_message">Prinoproseso ang iyong request...</string>
+    <string name="close">Close</string>
+    <string name="help">Help</string>
+
+    <string name="confirmation_message">Gusto mo bang bumili ng &lt;b>%1$s&lt;/b> para sa &lt;b>%2$s&lt;/b></string>
+    <string name="description_message">%1$s ay sisingilin sa iyong phone bill</string>
+
+    <string name="payment_not_supported_title">Ang bayad ay hindi nagtagumpay.</string>
+    <string name="payment_failed_message">"May natagpuang error sa pagbili"</string>
+
+    <string name="choose_package">Choose package</string>
+    <string name="make_payment">Make payment</string>
+    <string name="_for">for</string>
+    <string name="next">Next</string>
+</resources>

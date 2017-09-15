@@ -1,0 +1,19 @@
+<resources>
+    <string name="confirm_payment">Ikumpirma ang Bayad</string>
+    <string name="secured_by_pw">Ligtas na Pagbayad sa Paymentwall © %1$s</string>
+
+    <string name="title_local_payment">Lokal na paraan ng pagbabayad</string>
+    <string name="title_brick">Credit/Debit kard</string>
+    <string name="title_mobiamo">SMS</string>
+    <string name="title_mint">Prepaid kard</string>
+
+    <string name="payment_unsuccessful">Ang bayad ay hindi nagtagumpay</string>
+    <string name="payment_unsuccessful_message">Sorry. Pakisubukang muli</string>
+    <string name="term_alert">Maari lamang sumang-ayon sa mga termino ng serbisyo at ibang mga kasunduan</string>
+
+    <string name="payment_accepted">Ang bayad ay natanggap!</string>
+    <string name="redirecting_to">Nagre-redirect sa %1$s </string>
+
+    <string name="initialize_request">Prinoproseso ang iyong request...</string>
+
+</resources>

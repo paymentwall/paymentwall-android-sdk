@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+        android:id="@+id/tvConfirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/input_cvv"
+        android:textColor="?textMain"
+        android:textSize="18sp" />
+
+    <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularEditText
+        android:id="@+id/etCvv"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:textColor="?textMain"
+        android:imeOptions="flagNoExtractUi|actionNext"
+        android:inputType="number"
+        android:maxLength="3"
+        android:minWidth="250dp"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+            android:id="@+id/tvSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/saas_btn_submit"
+            android:padding="6dp"
+            android:text="@string/submit"
+            android:textAllCaps="true"
+            android:textColor="@color/text_submit"
+            android:textSize="16sp" />
+
+        <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:background="@drawable/saas_btn_submit"
+            android:padding="6dp"
+            android:text="@string/cancel"
+            android:textAllCaps="true"
+            android:textColor="@color/text_submit"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

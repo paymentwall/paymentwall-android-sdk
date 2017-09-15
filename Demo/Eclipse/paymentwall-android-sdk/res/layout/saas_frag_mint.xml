@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true">
+
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/saas_layout_product_info" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/enter_your_pin"
+                    android:textColor="?textFormTitle"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp">
+
+                    <com.paymentwall.pwunifiedsdk.mint.ui.views.AutoFitEditText
+                        android:id="@+id/etCode1"
+                        style="@style/text_mint_form"
+                        tools:text="1234" />
+
+                    <com.paymentwall.pwunifiedsdk.mint.ui.views.AutoFitEditText
+                        android:id="@+id/etCode2"
+                        style="@style/text_mint_form"
+                        tools:text="1234" />
+
+                    <com.paymentwall.pwunifiedsdk.mint.ui.views.AutoFitEditText
+                        android:id="@+id/etCode3"
+                        style="@style/text_mint_form"
+                        tools:text="1234" />
+
+                    <com.paymentwall.pwunifiedsdk.mint.ui.views.AutoFitEditText
+                        android:id="@+id/etCode4"
+                        style="@style/text_mint_form"
+                        android:imeOptions="actionDone|flagNoExtractUi"
+                        tools:text="1234" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:minHeight="40dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cbAccept"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/check_box"
+                        android:checked="true" />
+
+                    <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+                        android:id="@+id/tvAgreement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:maxLines="1"
+                        android:text="@string/agreement"
+                        android:textColor="?textFormTitle"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularButton
+                    android:id="@+id/btnConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="?bgConfirmButton"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:text="@string/confirm"
+                    android:textAllCaps="true"
+                    android:textColor="?textConfirmButton"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <include
+                layout="@layout/saas_layout_copyright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="24dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

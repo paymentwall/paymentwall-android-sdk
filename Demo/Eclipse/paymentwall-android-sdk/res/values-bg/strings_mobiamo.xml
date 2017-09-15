@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy">Закупуване</string>
+    <string name="need_some_help">Нуждаете ли се от помощ?</string>
+    <string name="back">Back</string>
+    <string name="payment_confirmation">Payment Confirmation</string>
+    <string name="initiate_purchase_message">Плащането е в процес...</string>
+    <string name="close">Затваряне</string>
+    <string name="help">Помощ</string>
+
+    <string name="confirmation_message">Желаете ли да закупите &lt;b>%1$s&lt;/b> за &lt;b>%2$s&lt;/b>)?</string>
+    <string name="description_message">%1$s ще бъде взета от вашата телефонна сметка</string>
+
+    <string name="payment_not_supported_title">Неуспешно плащане</string>
+    <string name="payment_failed_message">Възникна грешка при покупката</string>
+
+    <string name="choose_package">Choose package</string>
+    <string name="make_payment">Make payment</string>
+    <string name="_for">for</string>
+    <string name="next">Next</string>
+</resources>

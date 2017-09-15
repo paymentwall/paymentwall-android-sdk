@@ -1,0 +1,19 @@
+<resources>
+    <string name="confirm_payment">Konfirmasi pembayaran</string>
+    <string name="secured_by_pw">pembayaran dijamin oleh paymentwall © %1$s</string>
+
+    <string name="title_local_payment">Pembayaran lokal</string>
+    <string name="title_brick">Kartu kredit / debit</string>
+    <string name="title_mobiamo">SMS</string>
+    <string name="title_mint">Kartu prabayar</string>
+
+    <string name="payment_unsuccessful">Pembayaran gagal...</string>
+    <string name="payment_unsuccessful_message">Maaf. Silahkan mencoba lagi</string>
+    <string name="term_alert">Silakan menyetujui syarat dan persetujuan kami yang lainnya</string>
+
+    <string name="payment_accepted">Pembayaran diterima!</string>
+    <string name="redirecting_to">Mengalihkan ke %1$s</string>
+
+    <string name="initialize_request">Menginisialisasi permintaan...</string>
+
+</resources>

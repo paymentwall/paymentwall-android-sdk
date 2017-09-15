@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+        android:id="@+id/tvConfirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textColor="?textMain"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+            android:id="@+id/tvYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/saas_btn_submit"
+            android:padding="6dp"
+            android:textAllCaps="true"
+            android:text="@string/text_yes"
+            android:textColor="@color/text_submit"
+            android:textSize="16sp" />
+
+        <com.paymentwall.pwunifiedsdk.ui.ProximaNovaRegularTextView
+            android:id="@+id/tvNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:background="@drawable/saas_btn_submit"
+            android:textAllCaps="true"
+            android:padding="6dp"
+            android:text="@string/text_no"
+            android:textColor="@color/text_submit"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</LinearLayout>

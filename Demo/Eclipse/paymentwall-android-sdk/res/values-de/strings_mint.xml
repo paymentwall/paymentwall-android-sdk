@@ -1,0 +1,73 @@
+<resources>
+    <!--<string name="enter_your_pin">Enter your ePin</string>-->
+    <string name="confirm">Bestätigen</string>
+
+    <!--Dialog waiting-->
+    <string name="timeout_connnection">Timeout connection</string>
+    <string name="payment_error">Payment error</string>
+
+    <string name="enter_your_pin">Enter your ePin</string>
+    <string name="agreement">I accept Terms and Privacy Policy</string>
+
+    <!--Dialog help-->
+
+    <string name="terms">Terms</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+    <!--Dialog payment successful-->
+
+    <string name="status">Status</string>
+    <string name="error">Error</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="err_mint_pin_16">Error! MINT ePin must have 16 digits</string>
+    <string name="service_unavailable">Service is unavailable. Please try again later</string>
+    <string name="check_internet_connection">Please check your internet connection</string>
+    <string name="err_system_time_incorrect">Payment cannot be done because system time isn\'t right. Please update it!</string>
+
+    <string name="card_number_hint">Kartennummer</string>
+    <string name="exp_date_hint">Exp. date</string>
+    <string name="cvv_hint">CVV</string>
+    <string name="email_hint">Email address</string>
+
+    <!--Layout DatePicker-->
+    <string name="choose_expiration_date">Choose expiration date</string>
+    <string name="month_1">Jan</string>
+    <string name="month_2">Feb</string>
+    <string name="month_3">Mar</string>
+    <string name="month_4">Apr</string>
+    <string name="month_5">May</string>
+    <string name="month_6">Jun</string>
+    <string name="month_7">Jul</string>
+    <string name="month_8">Aug</string>
+    <string name="month_9">Sep</string>
+    <string name="month_10">Oct</string>
+    <string name="month_11">Nov</string>
+    <string name="month_12">Dec</string>
+    <string name="month_1_full">January</string>
+    <string name="month_2_full">February</string>
+    <string name="month_3_full">March</string>
+    <string name="month_4_full">April</string>
+    <string name="month_5_full">May</string>
+    <string name="month_6_full">June</string>
+    <string name="month_7_full">July</string>
+    <string name="month_8_full">August</string>
+    <string name="month_9_full">September</string>
+    <string name="month_10_full">October</string>
+    <string name="month_11_full">November</string>
+    <string name="month_12_full">December</string>
+
+    <string name="err_invalid_card_number">Invalid credit card number</string>
+    <string name="err_invalid_expiration_date">Invalid date</string>
+    <string name="error_invalid_cvv">Invalid CVV</string>
+    <string name="error_invalid_email">Invalid email</string>
+
+    <string name="description_roaming_state">(You are in roaming, carrier messaging rates may apply to this payment)</string>
+
+    <string name="payment_not_supported_message">This payment option is not supported in your country</string>
+
+    <string name="err_no_internet_connection">No internet connection</string>
+    <string name="err_no_sim">No sim card found</string>
+
+    <string name="pricepoint_confirmation">will be charged to your mobile phone bill</string>
+
+</resources>

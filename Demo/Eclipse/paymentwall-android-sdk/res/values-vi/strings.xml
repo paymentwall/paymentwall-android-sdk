@@ -1,0 +1,19 @@
+<resources>
+    <string name="confirm_payment">Xác nhận thanh toán</string>
+    <string name="secured_by_pw">Thanh toán bảo mật bởi Paymentwall © %1$s</string>
+
+    <string name="title_local_payment">Thanh toán cục bộ</string>
+    <string name="title_brick">Thẻ tín dụng</string>
+    <string name="title_mobiamo">SMS</string>
+    <string name="title_mint">Thẻ trả trước</string>
+
+    <string name="payment_unsuccessful">Giao dịch không thành công...</string>
+    <string name="payment_unsuccessful_message">Xin lỗi. Hãy thử lại sau</string>
+    <string name="term_alert">Xin hãy đồng ý với các điều khoản của chúng tôi</string>
+
+    <string name="payment_accepted">Giao dịch được chấp nhận!</string>
+    <string name="redirecting_to">Đang chuyển hướng đến</string>
+
+    <string name="initialize_request">Đang khởi tạo giao dịch......</string>
+
+</resources>

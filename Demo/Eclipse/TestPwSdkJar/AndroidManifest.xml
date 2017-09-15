@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.anhhn.testpwsdkjar"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="24" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    
+    <permission
+        android:name="com.anhhn.testpwsdkjar.mobiamo.PAYMENT_BROADCAST_PERMISSION"
+        android:label="Request for sending mobiamobroadcast to Mobiamo"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.anhhn.testpwsdkjar.mobiamo.PAYMENT_BROADCAST_PERMISSION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        tools:replace="android:theme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.paymentwall.pwunifiedsdk.core.PaymentSelectionActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:theme="@style/PaymentwallSDKTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize|adjustPan" />
+
+        <activity
+            android:name="com.paymentwall.sdk.pwlocal.ui.PwLocalActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <receiver
+            android:name="com.paymentwall.pwunifiedsdk.mobiamo.core.MobiamoBroadcastReceiver"
+            android:exported="false"
+            android:permission="com.anhhn.testpwsdkjar.mobiamo.PAYMENT_BROADCAST_PERMISSION">
+            <intent-filter>
+                <action android:name="com.paymentwall.mobiamosdk.SENT_SMS_ACTION"/>
+            </intent-filter>
+        </receiver>
+        
+        <activity
+            android:name="com.paymentwall.pwunifiedsdk.mobiamo.core.MobiamoDialogActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        
+        <activity
+            android:name="com.paymentwall.cardio.CardIOActivity"
+            android:configChanges="keyboardHidden|orientation" />
+
+        <activity android:name="com.paymentwall.cardio.DataEntryActivity" />
+        
+    </application>
+
+</manifest>
