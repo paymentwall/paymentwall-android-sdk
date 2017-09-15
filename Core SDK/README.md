@@ -342,12 +342,21 @@ request.addMobiamo();
 
 ### PWLocal
 
-**Step 1: Add PwLocal Payment Method**
+**Step 1: 
+
+```java
+<activity
+   android:name="com.paymentwall.sdk.pwlocal.ui.PwLocalActivity"
+   android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+   android:theme="@android:style/Theme.Translucent" />
+```
+
+**Step 2: Add PwLocal Payment Method**
 
 ```java
 request.addPwLocal();
 ```
-**Step 2: Add Extra parameters**
+**Step 3: Add Extra parameters**
 
 Use ```addPwlocalParams(String key, String value)``` method to add extra params for Pwlocal.
 
