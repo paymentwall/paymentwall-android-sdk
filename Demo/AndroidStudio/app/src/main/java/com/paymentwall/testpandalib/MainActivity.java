@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
 
     private void startPayment() {
         UnifiedRequest request = new UnifiedRequest();
-        request.setPwProjectKey("f29e7441a54debd44f903a2b7c40b15d");
+        request.setPwProjectKey(Constants.PW_PROJECT_KEY);
         request.setPwSecretKey(Constants.PW_SECRET_KEY);
 
         request.setAmount(Constants.AMOUNT);
