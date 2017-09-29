@@ -11,15 +11,8 @@ import com.paymentwall.pwunifiedsdk.core.PaymentSelectionActivity;
 import com.paymentwall.pwunifiedsdk.core.UnifiedRequest;
 import com.paymentwall.pwunifiedsdk.object.ExternalPs;
 import com.paymentwall.pwunifiedsdk.util.Key;
-import com.paymentwall.pwunifiedsdk.util.MiscUtils;
 import com.paymentwall.pwunifiedsdk.util.ResponseCode;
-import com.paymentwall.sdk.pwlocal.message.CustomRequest;
-import com.paymentwall.sdk.pwlocal.message.LocalDefaultRequest;
-import com.paymentwall.sdk.pwlocal.ui.PwLocalActivity;
-import com.paymentwall.sdk.pwlocal.utils.ApiType;
 import com.paymentwall.sdk.pwlocal.utils.Const;
-
-import java.util.TreeMap;
 
 /**
  * Created by andy.ha on 9/14/2016.
