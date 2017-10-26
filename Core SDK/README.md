@@ -223,6 +223,8 @@ Declare tools namespace in the manifest tag:
 ```java
 request.addBrick();
 ```
+If only Brick is added into `request`, Brick payment will be displayed directly.
+
 NOTE: If you are asked to add bank information in footer, please add code below:
 
 ```java
@@ -238,6 +240,8 @@ BroadcastReceiver receiver = new BroadcastReceiver() {
    public void onReceive(Context context, Intent intent) {
        if (intent.getAction().equalsIgnoreCase(getPackageName() + Brick.BROADCAST_FILTER_MERCHANT)) {
            String brickToken = intent.getStringExtra(Brick.KEY_BRICK_TOKEN);
+           String userEmail = intent.getStringExtra(Brick.KEY_BRICK_EMAIL);
+           String cardHolderName = intent.getStringExtra(Brick.KEY_BRICK_CARDHOLDER);
           //process your business logic
 
        }
@@ -281,7 +285,8 @@ You need to parse and obtain the 3ds url and then send it back to the sdk:
 ```java
 Brick.getInstance().setResult(form3ds);
 ```
-3ds form will be opened in SDK's native webview. After user fill in the security code, the form will submit itself and the result will be redirect to the SDK.
+3ds form will be opened in SDK's native webview. After 3ds is completed, please redirect the form to your website and return a charge object in HTTP response, so SDK can detect the event and close the webview.
+3ds webview can also be closed with `Brick.getInstance().setResult(result, token)`
 
 Note: If 3ds is omitted, charge object will be returned in response.
 
