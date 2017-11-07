@@ -347,7 +347,7 @@ request.addMobiamo();
 
 ### PWLocal
 
-**Step 1: 
+**Step 1: Declare required activity**
 
 ```java
 <activity
@@ -373,7 +373,7 @@ Some params are automatically added by SDK (taken from UnifiedRequest object you
 * ```ag_external_id```
 * ```uid```
 
-Extra params list can be referred to [here](https://paymentwall.github.io/apis#section-checkout-onetime).
+Extra params list can be referred to [here](https://docs.paymentwall.com/apis#section-param-optional).
 
 Sample code:
 ```java
