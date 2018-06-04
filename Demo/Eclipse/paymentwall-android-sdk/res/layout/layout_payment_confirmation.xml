@@ -7,6 +7,7 @@
     android:layout_gravity="center"
     android:minHeight="180dp"
     android:minWidth="288dp"
+
     android:visibility="visible"
     android:fillViewport="false">
 

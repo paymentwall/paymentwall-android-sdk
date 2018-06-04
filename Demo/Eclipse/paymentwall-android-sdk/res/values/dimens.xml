@@ -2,4 +2,9 @@
 <resources>
 
     <dimen name="action_bar_height">56dp</dimen>
+    <dimen name="pwl_toolbar_height">40dp</dimen>
+    <dimen name="pwl_wheel_bar_width">3dp</dimen>
+    <dimen name="pwl_wheel_width">64dp</dimen>
+    <dimen name="pwl_wheel_height">64dp</dimen>
+    <dimen name="pwl_wheel_radius">30dp</dimen>
 </resources>

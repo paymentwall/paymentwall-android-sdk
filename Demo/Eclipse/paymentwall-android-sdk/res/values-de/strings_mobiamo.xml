@@ -8,8 +8,8 @@
     <string name="close">Close</string>
     <string name="help">Help</string>
 
-    <string name="confirmation_message">Do you want to buy</string>
-    <string name="description_message">will be charged to your mobile phone bill</string>
+    <string name="confirmation_message">Do you want to buy &lt;b>%1$s&lt;/b> for &lt;b>%2$s&lt;/b>?</string>
+    <string name="description_message">%1$s will be charged to your mobile phone bill</string>
 
     <string name="payment_not_supported_title">Payment failed</string>
     <string name="payment_failed_message">"An error occurred <br/> while purchasing"</string>

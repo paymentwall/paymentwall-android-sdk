@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/pwl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pwl_toolbar_height"
+        android:background="@color/saas_colorPrimary">
+
+        <ImageView
+            android:id="@+id/pwl_backbutton"
+            android:layout_width="@dimen/pwl_toolbar_height"
+            android:layout_height="@dimen/pwl_toolbar_height"
+            android:background="@drawable/btn_back_actionbar"
+            android:scaleType="center"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+    </FrameLayout>
+
+    <WebView
+        android:id="@+id/pwl_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/pwl_toolbar_height" />
+
+    <FrameLayout
+        android:id="@+id/pwl_loading_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/pwl_toolbar_height"
+        android:background="@color/black_transparent">
+
+        <com.paymentwall.sdk.pwlocal.ui.ProgressWheel
+            android:id="@+id/pwl_loading_wheel"
+            android:layout_width="@dimen/pwl_wheel_width"
+            android:layout_height="@dimen/pwl_wheel_height"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</FrameLayout>
