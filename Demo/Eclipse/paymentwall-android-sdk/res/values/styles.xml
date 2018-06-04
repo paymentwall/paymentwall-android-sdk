@@ -37,6 +37,10 @@
         <item name="iconPwlocal">@drawable/local</item>
     </style>
 
+    <style name="PwLocalTheme" parent="android:Theme.Light.NoTitleBar.Fullscreen">
+
+    </style>
+
     <style name="style_ps_name">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>

@@ -112,6 +112,8 @@
                             android:inputType="textCapSentences"
                             android:text=""
                             android:textSize="15sp"
+                            android:hint="@string/brick_hint_cardholder"
+                            android:textColorHint="@color/saas_textSecondary"
                             android:visibility="visible" />
 
                     </LinearLayout>
