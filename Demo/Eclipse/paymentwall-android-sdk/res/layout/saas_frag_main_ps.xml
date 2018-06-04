@@ -73,14 +73,12 @@
                     android:id="@+id/tvMint"
                     style="@style/style_ps_name"
                     android:text="@string/title_mint" />
-
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/llMobiamo"
                 style="@style/saas_ps_button"
                 android:layout_marginTop="2dp">
-
                 <ImageView
                     style="@style/ps_icon"
                     android:src="@drawable/mobiamo" />

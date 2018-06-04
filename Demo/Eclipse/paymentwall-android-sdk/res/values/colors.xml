@@ -42,5 +42,7 @@
     <color name="btn_help_pressed">#D9F2F2</color>
     <color name="black">#000000</color>
 
+    <!--pwlocal-->
+    <color name="pw_yellow">#ffffbb33</color>
 
 </resources>

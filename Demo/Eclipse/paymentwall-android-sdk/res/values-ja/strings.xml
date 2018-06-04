@@ -12,7 +12,7 @@
     <string name="term_alert">Please accept our terms and other agreements</string>
 
     <string name="payment_accepted">Payment accepted!</string>
-    <string name="redirecting_to">Redirecting to</string>
+    <string name="redirecting_to">Redirecting to %1$s</string>
 
     <string name="initialize_request">リクエスト初期化中...</string>
 

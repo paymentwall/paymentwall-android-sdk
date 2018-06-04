@@ -30,7 +30,7 @@
     <string name="cvv_hint">CVV</string>
     <string name="email_hint">Email address</string>
 
-   
+    /////////new words////////////////////////////////
     <string name="name_on_card">Name On Card</string>
     <string name="stored_card">Stored Card</string>
     <string name="use_a_new_card">Use a new card</string>
@@ -40,7 +40,7 @@
     <string name="store_card_success">Your card has been stored.</string>
     <string name="input_cvv">Input your CVV</string>
     <string name="delete_card_confirmation">Do you want to delete this card?</string>
-   
+    ////////////////////////////////////////////////////
 
     <!--Layout DatePicker-->
     <string name="choose_expiration_date">Choose expiration date</string>

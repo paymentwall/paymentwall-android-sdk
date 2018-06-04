@@ -121,7 +121,8 @@
                                 android:imeOptions="flagNoExtractUi|actionNext"
                                 android:inputType="textEmailAddress"
                                 android:text=""
-                                android:textColorHint="@color/black_text"
+                                android:hint="@string/brick_hint_cardholder"
+                                android:textColorHint="@color/saas_textSecondary"
                                 android:textSize="15sp"
                                 android:visibility="visible" />
 

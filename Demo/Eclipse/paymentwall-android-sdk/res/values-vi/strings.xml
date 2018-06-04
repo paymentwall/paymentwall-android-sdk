@@ -12,7 +12,7 @@
     <string name="term_alert">Xin hãy đồng ý với các điều khoản của chúng tôi</string>
 
     <string name="payment_accepted">Giao dịch được chấp nhận!</string>
-    <string name="redirecting_to">Đang chuyển hướng đến</string>
+    <string name="redirecting_to">Đang chuyển hướng đến %1$s</string>
 
     <string name="initialize_request">Đang khởi tạo giao dịch......</string>
 
