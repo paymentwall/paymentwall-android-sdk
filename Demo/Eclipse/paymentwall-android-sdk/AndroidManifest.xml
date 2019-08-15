@@ -1,22 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.paymentwall.pwunifiedsdk"
-    android:versionName="1.0.0">
+    android:versionCode="1"
+    android:versionName="1.0" >
 
-    <uses-sdk tools:overrideLibrary="io.card.payment" />
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="27"
+        tools:overrideLibrary="io.card.payment" />
 
-    <application
-        android:supportsRtl="true">
-
-        <!--<meta-data android:name="io.fabric.ApiKey"-->
-        <!--android:value="a97c9a3e9b94f95964639836a84528b2aea7b3de" />-->
-
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="0177224882f97aa98b36439caf1a32ffb7da4d39" />
-
+    <application android:supportsRtl="true" >
         <activity
-            android:name=".core.PaymentSelectionActivity"
+            android:name="com.paymentwall.pwunifiedsdk.core.PaymentSelectionActivity"
             android:theme="@style/PaymentwallSDKTheme" />
     </application>
 
