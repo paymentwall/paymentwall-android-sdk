@@ -30,7 +30,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.okhttp:okhttp:2.2.0'
-    compile files('libs/alipaySdk-20170309.jar')
+    compile project(':alipaySdk-15.6.5-20190718211148')
     compile project(':alipayadapter-release')
     compile project(':paymentwall-android-sdk')
 }
