@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="agreement">Accetto le condizioni di utilizzo e sulla privacy</string>
+    <string name="enter_your_pin">Inserire il proprio ePin</string>
+</resources>
