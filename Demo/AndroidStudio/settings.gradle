@@ -1,1 +1,1 @@
-include ':app', ':alipayadapter-release', ':paymentwall-android-sdk', ':alipaySdk-15.6.5-20190718211148'
+include ':app', ':alipayadapter-release', ':alipaySdk-15.6.5-20190718211148', ':paymentwall-android-sdk'

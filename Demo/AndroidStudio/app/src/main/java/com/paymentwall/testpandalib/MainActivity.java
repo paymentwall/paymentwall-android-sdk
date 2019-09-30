@@ -14,6 +14,8 @@ import com.paymentwall.pwunifiedsdk.util.Key;
 import com.paymentwall.pwunifiedsdk.util.ResponseCode;
 import com.paymentwall.sdk.pwlocal.utils.Const;
 
+import java.util.UUID;
+
 /**
  * Created by andy.ha on 9/14/2016.
  */
@@ -62,6 +64,7 @@ public class MainActivity extends Activity {
         request.addPwlocalParams(Const.P.EMAIL, "fixed");
         request.addPwlocalParams(Const.P.WIDGET, "pw");
         request.addPwlocalParams(Const.P.EVALUATION, "1");
+        request.getFasterPayRequest();
 
 
         PsAlipay alipay = new PsAlipay();
@@ -74,6 +77,12 @@ public class MainActivity extends Activity {
 
         ExternalPs alipayPs = new ExternalPs("alipay", "Alipay", 0, alipay);
         request.add(alipayPs);
+
+        request.addFasterPay(
+            "your_key",
+            UUID.randomUUID().toString(),
+            "Demo description"
+        );
 
         Intent intent = new Intent(getApplicationContext(), PaymentSelectionActivity.class);
         intent.putExtra(Key.REQUEST_MESSAGE, request);

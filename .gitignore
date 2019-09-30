@@ -1,1 +1,4 @@
 ignore something
+Demo/AndroidStudio_mirror
+*/.DS_Store
+*/.idea
