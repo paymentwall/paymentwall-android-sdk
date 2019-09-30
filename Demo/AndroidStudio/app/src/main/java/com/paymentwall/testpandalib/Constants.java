@@ -1,5 +1,7 @@
 package com.paymentwall.testpandalib;
 
+import java.math.BigDecimal;
+
 /**
  * Created by nguyen.anh on 9/14/2016.
  */
@@ -9,7 +11,7 @@ public class Constants {
     public static final String PW_PROJECT_KEY = "YOUR_APP_KEY";
     public static final String PW_SECRET_KEY = "YOUR_SECRET_KEY";
 
-    public static final double AMOUNT = 0.01;
+    public static final BigDecimal AMOUNT = new BigDecimal(0.01);
     public static final String CURRENCY = "USD";
     public static final String ITEM_NAME = "Test item";
     public static final String ITEM_ID = "testitem1";
