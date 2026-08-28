@@ -1,1 +1,28 @@
-ignore something
+# Build outputs
+build/
+.gradle/
+.kotlin/
+*.apk
+*.ap_
+*.dex
+*.class
+
+# Local configuration - machine-specific, and the file where SDK keys end up.
+# Never commit this.
+local.properties
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.cxx/
+captures/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NOTE: *.aar is deliberately NOT ignored. The artifacts under "Core SDK/dist/"
+# ARE the product of this repository, and a blanket *.aar rule would silently stop
+# the thing merchants download from being committed.

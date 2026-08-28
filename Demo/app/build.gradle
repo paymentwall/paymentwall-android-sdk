@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.merchant'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.example.merchant'
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+    }
+    buildTypes {
+        release {
+            // The SDK ships its own ProGuard rules inside the .aar, so a minifying
+            // build needs no keep rules of yours. This sample turns minification on to
+            // show that.
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            // Signed with the debug key only so the release APK can be installed for a
+            // quick look. Use your own signing config in a real app.
+            signingConfig signingConfigs.debug
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions { jvmTarget = '1.8' }
+}
+
+dependencies {
+    // In your own app, copy the .aar into libs/ and write:
+    //     implementation files('libs/paymentwall-android-sdk.aar')
+    // This sample reads it from where the repository keeps it instead, so there is only
+    // ever one copy of the file to keep up to date.
+    implementation files(rootProject.file('../Core SDK/dist/paymentwall-android-sdk.aar'))
+
+    // Only needed if you offer MyCard. Leave this line out and the method is simply
+    // not offered to the payer.
+    implementation files(rootProject.file('../Plugin/MyCard/dist/mycardadapter.aar'))
+
+    // Required by the SDK. An .aar carries no dependency information, so these are
+    // yours to declare - leaving one out builds fine and then fails at runtime on the
+    // payment screen.
+    implementation 'androidx.core:core:1.13.1'
+    implementation 'androidx.fragment:fragment:1.8.6'
+    implementation 'androidx.annotation:annotation:1.9.1'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.21'
+
+    // This sample's own UI. The SDK does not depend on AppCompat or Material.
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+}
