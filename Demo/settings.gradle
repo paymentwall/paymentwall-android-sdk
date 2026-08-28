@@ -1,0 +1,14 @@
+// Repositories are deliberately just google() and mavenCentral() — the two any
+// Android project already has. The SDK itself is a local .aar file, so nothing about
+// this sample needs a private repository or a custom mirror.
+pluginManagement {
+    repositories { google(); mavenCentral(); gradlePluginPortal() }
+}
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = 'paymentwall-demo'
+include ':app'
