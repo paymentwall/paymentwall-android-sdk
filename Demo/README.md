@@ -1,7 +1,7 @@
 # Demo — a minimal, complete integration
 
-A standalone Android app that integrates the Paymentwall SDK the way you will: it consumes the
-published `.aar`, from a build that shares nothing with the SDK's own.
+A standalone Android app that integrates the Paymentwall SDK the way you will: it resolves the
+published artifacts from Maven Central, from a build that shares nothing with the SDK's own.
 
 Copy `app/build.gradle` and
 [`MainActivity.kt`](app/src/main/java/com/example/merchant/MainActivity.kt) as your starting point —
@@ -19,15 +19,16 @@ environment variable.
 
 ## What it demonstrates
 
-- **The published `.aar`, plus the four dependencies it cannot declare for itself.** That second
-  list is the part to copy carefully: leave one out and the build still succeeds, then fails on the
-  payment screen.
-  This sample points at the checked-in artifacts under `Core SDK/dist/` and
-  `Plugin/MyCard/dist/` so the repository does not carry the same
-  binary twice. **In your own app, copy the file into `libs/`** and write
-  `implementation files('libs/paymentwall-android-sdk.aar')` — same mechanism, and it is what the
-  guide tells you.
-- **`minifyEnabled true`.** The SDK's ProGuard rules travel inside the `.aar`, so a minifying
+- **Two coordinates, and nothing else.** `paymentwall-android` and, because this sample offers
+  MyCard, `paymentwall-android-plugin-mycard`. The SDK brings its own `androidx` and Kotlin
+  requirements through its POM — there is no list of transitive dependencies for you to copy and
+  keep in step. The versions are in [`gradle.properties`](gradle.properties), one line each, because
+  the two artifacts version independently.
+- **A `CardChargeHandler`.** The SDK tokenises the card and hands you the token; the charge is yours
+  to make server-side. Omit the handler and the payer fills in the whole form and gets
+  *"No CardChargeHandler registered"*. This sample approves locally because it has no backend —
+  that is the one part not to copy.
+- **`minifyEnabled true`.** The SDK's ProGuard rules travel inside the artifact, so a minifying
   build needs no keep rules of its own.
 - **`google()` and `mavenCentral()` only** — the SDK needs no special repository.
 - **An availability report.** It prints `PaymentwallSDK.isAvailable` for every method the SDK ships,

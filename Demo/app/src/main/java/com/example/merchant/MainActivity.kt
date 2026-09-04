@@ -40,6 +40,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         PaymentwallSDK.initialize()
 
+        // REQUIRED IF YOU OFFER CARDS. The SDK tokenises the card and then hands the
+        // token to you: the charge itself is yours to make, server-side, because the
+        // SDK never sees your secret key on a server and cannot capture money for you.
+        // Without this the payer fills in the whole card form and then gets
+        // "No CardChargeHandler registered", which is a dead end.
+        //
+        // WHAT A REAL MERCHANT DOES HERE: send card.token to your own backend, charge
+        // it with your Paymentwall secret key, and report the outcome back. This sample
+        // has no backend, so it approves locally to show the success screen - do NOT
+        // copy that part.
+        PaymentwallSDK.setCardChargeHandler { card, outcome ->
+            // card.token is the one-time token; card.permanentToken is present only if
+            // the payer chose "Save this card" and your project has it enabled.
+            outcome.charged(null)
+        }
+
         out = TextView(this).apply { setPadding(32, 32, 32, 32) }
 
         // isAvailable tells you whether a method can run in THIS build before you offer

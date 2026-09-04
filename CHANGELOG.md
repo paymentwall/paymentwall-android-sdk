@@ -1,5 +1,38 @@
 # Changelog
 
+## 2.0.1
+
+**The SDK is on Maven Central, and that is now the only channel.**
+
+```groovy
+implementation 'com.paymentwall:paymentwall-android:2.0.1'
+implementation 'com.paymentwall:paymentwall-android-plugin-mycard:2.0.1'   // only if you offer MyCard
+```
+
+**No further `.aar` files are cut**, and the ones 2.0.0 shipped are no longer in this repository.
+See *Coming from 2.0.0* in the [README](README.md) — it is two lines of change, and it **deletes**
+the four dependencies you previously had to declare by hand, because the POM carries them now.
+
+**The artifacts are renamed.** `paymentwall-android-sdk` → `paymentwall-android`, and
+`mycardadapter` → `paymentwall-android-plugin-mycard`. The coordinates drop the redundant `-sdk` and
+put every add-on under a `-plugin-` prefix. Nothing about the code or the API changed with the name.
+
+**The two version independently.** MyCard changes far less often than the SDK, so the core may be at
+a higher version than the plugin. Use the latest of each; they do not have to match.
+
+### One API change
+
+`PaymentRequest.Builder.user(userId)` is **required**, and `build()` now rejects a request without
+it, naming the field. It was always required in practice — the SDK refused such a request further
+in, after the payer had already chosen a payment method, with a message that named nothing. If you
+already call `.user(...)`, as the guides have always shown, nothing changes for you.
+
+### Verifying a release
+
+Every artifact is signed. The key is `B730099F96D5462757DFE6B9EE2C59E996E73082`, on
+`keyserver.ubuntu.com`.
+
+
 ## 2.0.0
 
 A rewrite of the integration surface. If you are on 1.x, expect to change code — the payment

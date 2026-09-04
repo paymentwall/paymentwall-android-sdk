@@ -18,30 +18,32 @@ Paymentwall Android SDK **2.0**. Everything below is the public API — the pack
 
 ## Step 1: Add the SDK
 
-Copy `dist/paymentwall-android-sdk.aar` into your app module's `libs/` directory, then:
+From Maven Central:
 
 ```groovy
-dependencies {
-    implementation files('libs/paymentwall-android-sdk.aar')
+repositories {
+    google()
+    mavenCentral()
+}
 
-    // Required. An .aar carries no dependency information, so these are yours to
-    // declare. Same or newer is fine; these are the versions the SDK is tested against.
-    implementation 'androidx.core:core:1.13.1'
-    implementation 'androidx.fragment:fragment:1.8.6'
-    implementation 'androidx.annotation:annotation:1.9.1'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.21'
+dependencies {
+    implementation 'com.paymentwall:paymentwall-android:2.0.1'
 }
 ```
 
-Verify the download against `dist/SHA256SUMS`:
+That is the whole dependency. The SDK declares its own `androidx` and Kotlin requirements through
+its POM, so there is nothing else for you to add and nothing to keep in step with it.
+
+Optional verification — every artifact is signed:
 
 ```bash
-shasum -a 256 -c SHA256SUMS
+gpg --keyserver keyserver.ubuntu.com --recv-keys B730099F96D5462757DFE6B9EE2C59E996E73082
+gpg --verify paymentwall-android-2.0.1.aar.asc paymentwall-android-2.0.1.aar
 ```
 
 ### Your manifest needs nothing
 
-The `.aar` declares its own permissions (`INTERNET`, `ACCESS_NETWORK_STATE`) and its own
+The artifact declares its own permissions (`INTERNET`, `ACCESS_NETWORK_STATE`) and its own
 activities, and the manifest merger picks them up. **Do not copy activity declarations into your
 manifest** — 1.x required that and 2.0 does not.
 
