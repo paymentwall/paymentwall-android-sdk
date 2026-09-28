@@ -42,11 +42,6 @@ implementation 'com.paymentwall:paymentwall-android-plugin-mycard:2.0.1'   // on
 
 - **The checkout is flat.** Methods that used to sit behind a nested list are rows on the first
   screen, so a payer sees everything on offer at once and reaches any of it in one tap.
-- **"Local Payments"** is what the hosted-page method is called, on the row and on the screen it
-  opens. It was inconsistent before.
-- **The payment screens link to Paymentwall's privacy policy** from their footer, so a payer can
-  read it before they pay.
-- A selected row now shows a chevron rather than a check mark, matching the iOS SDK.
 
 ### Fixed
 
