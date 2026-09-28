@@ -31,9 +31,6 @@ environment variable.
 - **`minifyEnabled true`.** The SDK's ProGuard rules travel inside the artifact, so a minifying
   build needs no keep rules of its own.
 - **`google()` and `mavenCentral()` only** — the SDK needs no special repository.
-- **An availability report.** It prints `PaymentwallSDK.isAvailable` for every method the SDK ships,
-  so you can see exactly what this build can offer. A method whose adapter is not in the build
-  reports `false` and is never shown to the payer.
 - **Edge-to-edge handled properly.** `targetSdk 35` means the window draws behind the status and
   navigation bars whether you ask for it or not, so `MainActivity` pads by the real inset values
   rather than a guessed number. Skip that and your first line of content is hidden behind the status

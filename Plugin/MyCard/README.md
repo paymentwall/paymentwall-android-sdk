@@ -7,16 +7,13 @@ only if you offer MyCard; the core SDK does not depend on it.
 
 ```groovy
 dependencies {
-    implementation 'com.paymentwall:paymentwall-android:2.0.1'
+    implementation 'com.paymentwall:paymentwall-android:2.2.0'
     implementation 'com.paymentwall:paymentwall-android-plugin-mycard:2.0.1'
 }
 ```
 
 The plugin declares the core as a dependency, so the second line alone is enough — the first is
 there because you want it explicit in your build file.
-
-**It carries its own version number.** MyCard changes far less often than the SDK, so the core may
-be ahead of it; use the latest of each rather than trying to match them.
 
 There is no setup call. The plugin registers itself when it is on the classpath.
 

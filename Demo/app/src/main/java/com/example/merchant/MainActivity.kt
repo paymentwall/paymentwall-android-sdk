@@ -47,46 +47,27 @@ class MainActivity : AppCompatActivity() {
         // "No CardChargeHandler registered", which is a dead end.
         //
         // WHAT A REAL MERCHANT DOES HERE: send card.token to your own backend, charge
-        // it with your Paymentwall secret key, and report the outcome back. This sample
-        // has no backend, so it approves locally to show the success screen - do NOT
-        // copy that part.
+        // it with your Paymentwall secret key, and hand the charge API's response back
+        // with outcome.chargeResponse(body) - which also lets the SDK run a 3-D Secure
+        // challenge when the issuer asks for one. This sample has no backend, so it
+        // approves locally to show the success screen - do NOT copy that part.
         PaymentwallSDK.setCardChargeHandler { card, outcome ->
-            // card.token is the one-time token; card.permanentToken is present only if
-            // the payer chose "Save this card" and your project has it enabled.
+            // card.token is the one-time token. card.secure carries the values a
+            // 3-D Secure charge needs, and is null when the payment has no session.
             outcome.charged(null)
         }
 
         out = TextView(this).apply { setPadding(32, 32, 32, 32) }
-
-        // isAvailable tells you whether a method can run in THIS build before you offer
-        // it to a payer. The three built-in methods are always available; a method that
-        // ships as a separate .aar reports false when that file is not included.
-        val report = buildString {
-            appendLine("Adapter availability, as the SDK reports it:")
-            listOf(
-                PaymentMethodId.PW_LOCAL, PaymentMethodId.BRICK, PaymentMethodId.MINT,
-                PaymentMethodId.MYCARD
-            ).forEach { id ->
-                appendLine(
-                    "  ${id.value.padEnd(10)} -> ${
-                        PaymentwallSDK.isAvailable(
-                            this@MainActivity,
-                            id
-                        )
-                    }"
-                )
-            }
-        }
 
         val pay = Button(this).apply {
             text = "Pay (pwlocal + brick + mycard)"
             setOnClickListener {
                 val request = PaymentRequest.Builder("MERCHANT_PROJECT_KEY")
                     .secretKey("MERCHANT_SECRET_KEY")
-                    .customParameter(
-                        "widget",
-                        "pw_1"
-                    ) // Use the correct widget type defined on the merchant portal
+                    // Optional. The widget decides which local methods the hosted
+                    // checkout offers; its code is on your project's Widgets page.
+                    // Leave it out and the project's own configuration decides.
+                    .widget("pw_1")
                     .amount(java.math.BigDecimal("9.99"), "USD")
                     .item("sku_001", "A test item")
                     .user("merchant_test_user")
@@ -98,11 +79,6 @@ class MainActivity : AppCompatActivity() {
 
         val content = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            addView(TextView(this@MainActivity).apply {
-                text = report
-                setPadding(32, 32, 32, 16)
-                tag = "availability"
-            })
             addView(pay)
             addView(out)
         }

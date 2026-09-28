@@ -35,18 +35,12 @@ android {
 }
 
 dependencies {
-    // The SDK, from Maven Central. Two lines, and that is the whole integration.
+    // The SDK, from Maven Central. Its POM brings what it needs.
     implementation "com.paymentwall:paymentwall-android:${pwSdkVersion}"
 
     // Only needed if you offer MyCard. Leave this line out and the method is simply
-    // not offered to the payer. It carries its own version - see gradle.properties.
+    // not offered to the payer.
     implementation "com.paymentwall:paymentwall-android-plugin-mycard:${pwMyCardVersion}"
-
-    // NOTHING ELSE IS NEEDED, and that is the difference from the .aar route this
-    // sample used to take. An .aar carries no dependency information, so androidx.core,
-    // androidx.fragment, androidx.annotation and kotlin-stdlib all had to be declared
-    // here by hand - and leaving one out built fine and then failed at runtime, on the
-    // payment screen. The POM brings them, at the versions the SDK was tested against.
 
     // This sample's own UI. The SDK does not depend on AppCompat or Material.
     implementation 'androidx.appcompat:appcompat:1.7.0'

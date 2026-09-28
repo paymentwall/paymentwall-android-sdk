@@ -4,7 +4,7 @@ Accept payments inside your Android app. Paymentwall is a global payment gateway
 than 200 countries with 100+ alternative payment options, and this SDK becomes a native part of
 your application — so a payer never leaves it for a browser.
 
-**Version 2.0** is a substantial rewrite of 1.x: a new public API, a new payment UI, AndroidX
+**Version 2** is a substantial rewrite of 1.x: a new public API, a new payment UI, AndroidX
 throughout, and support for modern Android. If you are integrating for the first time, start at
 [Add the SDK](#add-the-sdk).
 
@@ -48,7 +48,7 @@ Two lines, from Maven Central:
 
 ```groovy
 dependencies {
-    implementation 'com.paymentwall:paymentwall-android:2.0.1'
+    implementation 'com.paymentwall:paymentwall-android:2.2.0'
 
     // ONLY if you offer MyCard. Omit it and the method reports itself unavailable.
     implementation 'com.paymentwall:paymentwall-android-plugin-mycard:2.0.1'
@@ -65,15 +65,10 @@ artifact. [Demo](Demo) is built with minification on if you want to see it.
 The published binary is obfuscated. Its `-sources.jar` is a notice rather than source code; the API
 reference is the `-javadoc.jar`, which your IDE picks up automatically.
 
-**The two carry independent version numbers.** The MyCard plugin changes far less often than the
-SDK, so the core may be at `2.1.0` while the plugin is still `2.0.1` — a supported pair, not a
-mistake. The plugin declares the SDK as a *minimum*, so Gradle resolves whichever core you asked
-for. Use the latest of each; you do not need to match them.
-
 ### Coming from 2.0.0
 
-**2.0.0 was a file you copied into `libs/`. That channel is retired** — 2.0.1 and everything after
-it is published to Maven Central only, and no further `.aar` files are cut. Two things change:
+**2.0.0 was a file you copied into `libs/`. That channel is retired** — the SDK is published to
+Maven Central only, and no further `.aar` files are cut. Two things change:
 
 ```groovy
 // before
@@ -84,12 +79,11 @@ implementation 'androidx.annotation:annotation:1.9.1'
 implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.21'
 
 // after
-implementation 'com.paymentwall:paymentwall-android:2.0.1'
+implementation 'com.paymentwall:paymentwall-android:2.2.0'
 ```
 
-**Delete those four dependency lines.** They existed only because a file carries no dependency
-information — omitting one built fine and then failed at runtime, on the payment screen. The POM
-carries them now, at the versions the SDK is tested against.
+**Delete those four dependency lines.** A file carries no dependency information, so they had to be
+declared by hand. The POM carries them now, at the versions the SDK is tested against.
 
 **And the artifact is renamed.** `paymentwall-android-sdk` → `paymentwall-android`, and
 `mycardadapter` → `paymentwall-android-plugin-mycard`: the coordinates drop the redundant `-sdk` and
@@ -99,10 +93,10 @@ put every add-on under a `-plugin-` prefix. Nothing about the code or the API ch
 
 ```bash
 gpg --keyserver keyserver.ubuntu.com --recv-keys B730099F96D5462757DFE6B9EE2C59E996E73082
-gpg --verify paymentwall-android-2.0.1.aar.asc paymentwall-android-2.0.1.aar
+gpg --verify paymentwall-android-2.2.0.aar.asc paymentwall-android-2.2.0.aar
 ```
 
-Full instructions, including the manifest entries and the payment flow:
+Full instructions, including the payment methods, card charging and 3-D Secure:
 **[Core SDK integration guide](Core%20SDK/README.md)**
 
 ## Payment methods
