@@ -1,6 +1,6 @@
 // Repositories are deliberately just google() and mavenCentral() — the two any
-// Android project already has. The SDK itself is a local .aar file, so nothing about
-// this sample needs a private repository or a custom mirror.
+// Android project already has. The SDK resolves from Maven Central like any other
+// dependency, so nothing about this sample needs a private repository or a mirror.
 pluginManagement {
     repositories { google(); mavenCentral(); gradlePluginPortal() }
 }

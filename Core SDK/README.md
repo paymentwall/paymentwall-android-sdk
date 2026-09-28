@@ -1,6 +1,6 @@
 # Core SDK integration guide
 
-Paymentwall Android SDK **2.0**. Everything below is the public API — the package
+Paymentwall Android SDK **2.2**. Everything below is the public API — the package
 `com.paymentwall.sdk.api`. You should not need any other package.
 
 - [Step 1: Add the SDK](#step-1-add-the-sdk)
@@ -9,6 +9,9 @@ Paymentwall Android SDK **2.0**. Everything below is the public API — the pack
 - [Step 4: Choose payment methods](#step-4-choose-payment-methods)
 - [Step 5: Card payments](#step-5-card-payments)
 - [Step 6: Handle the result](#step-6-handle-the-result)
+- [Optional: the widget code](#optional-the-widget-code)
+- [Optional: two projects in one app](#optional-two-projects-in-one-app)
+- [Optional: your own success screen](#optional-your-own-success-screen)
 - [Optional: item image](#optional-item-image)
 - [Optional: custom pingback parameters](#optional-custom-pingback-parameters)
 - [Optional: UI style and theming](#optional-ui-style-and-theming)
@@ -18,30 +21,32 @@ Paymentwall Android SDK **2.0**. Everything below is the public API — the pack
 
 ## Step 1: Add the SDK
 
-Copy `dist/paymentwall-android-sdk.aar` into your app module's `libs/` directory, then:
+From Maven Central:
 
 ```groovy
-dependencies {
-    implementation files('libs/paymentwall-android-sdk.aar')
+repositories {
+    google()
+    mavenCentral()
+}
 
-    // Required. An .aar carries no dependency information, so these are yours to
-    // declare. Same or newer is fine; these are the versions the SDK is tested against.
-    implementation 'androidx.core:core:1.13.1'
-    implementation 'androidx.fragment:fragment:1.8.6'
-    implementation 'androidx.annotation:annotation:1.9.1'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.21'
+dependencies {
+    implementation 'com.paymentwall:paymentwall-android:2.2.0'
 }
 ```
 
-Verify the download against `dist/SHA256SUMS`:
+That is the whole dependency. The SDK declares its own `androidx` and Kotlin requirements through
+its POM, so there is nothing else for you to add and nothing to keep in step with it.
+
+Optional verification — every artifact is signed:
 
 ```bash
-shasum -a 256 -c SHA256SUMS
+gpg --keyserver keyserver.ubuntu.com --recv-keys B730099F96D5462757DFE6B9EE2C59E996E73082
+gpg --verify paymentwall-android-2.2.0.aar.asc paymentwall-android-2.2.0.aar
 ```
 
 ### Your manifest needs nothing
 
-The `.aar` declares its own permissions (`INTERNET`, `ACCESS_NETWORK_STATE`) and its own
+The artifact declares its own permissions (`INTERNET`, `ACCESS_NETWORK_STATE`) and its own
 activities, and the manifest merger picks them up. **Do not copy activity declarations into your
 manifest** — 1.x required that and 2.0 does not.
 
@@ -131,6 +136,9 @@ payment.launch(request)
 | `.itemImage(...)` | Optional. See [item image](#optional-item-image) |
 | `.customParameter(k, v)` | Optional. Reaches your pingback |
 | `.skipSelectionFor(method)` | Optional. Go straight into one method, no selection screen |
+| `.widget(code)` | Optional. Which set of methods the hosted checkout offers. See [the widget code](#optional-the-widget-code) |
+| `.projectKey(method, key)` | Optional. Pay for one method against a different project. See [two projects in one app](#optional-two-projects-in-one-app) |
+| `.showSuccessScreen(false)` | Optional. Return to your app immediately instead of after the SDK's confirmation. See [your own success screen](#optional-your-own-success-screen) |
 
 Amounts are formatted for the currency, so a payer sees `$9.99`, `₫10.000` or `¥1,234` as that
 currency is actually written.
@@ -174,12 +182,9 @@ card, hands you the token, and waits while your server charges it.
 ```kotlin
 PaymentwallSDK.setCardChargeHandler { card, outcome ->
     // Send card.token to YOUR server, which calls Paymentwall's charge API.
-    yourApi.charge(card.token) { serverResult ->
-        when {
-            serverResult.approved  -> outcome.charged()
-            serverResult.needs3ds  -> outcome.requires3ds(serverResult.formHtml)
-            else                   -> outcome.failed(serverResult.message)
-        }
+    // Hand back what that API answered, exactly as it came.
+    yourApi.charge(card.token, card.secure) { responseBody ->
+        outcome.chargeResponse(responseBody)
     }
 }
 ```
@@ -189,13 +194,34 @@ supplied. Your server needs `token`.
 
 | `outcome` call | When |
 |---|---|
+| `chargeResponse(json)` | **Prefer this.** The charge API's response body, verbatim. The SDK reads it and tells an approval from a refusal from a 3-D Secure challenge by itself |
 | `charged()` | The charge succeeded. Pass a permanent token — `charged(permanentToken)` — if your server returned one and you want the SDK to offer that saved card next time |
-| `requires3ds(formHtml)` | Your server answered with a 3-D Secure challenge. The SDK renders the form and continues the flow |
+| `requires3ds(formHtml)` | Your server answered with a 3-D Secure challenge and you picked the value out of the response yourself. **It takes a URL despite the parameter name** — send `secure_return_method=url` with your charge and pass `secure.redirect`. Passing markup loads nothing and the payment stalls |
 | `failed(message)` | Declined, or your own error. `message` reaches the payer, so write it for them |
 
+Pass the response body **unwrapped and unmodified**. The SDK reports a body it cannot classify as a
+failure rather than guessing at it — so if your backend re-shapes the gateway's answer, use the three
+explicit calls instead.
+
 The payment screen stays up until you answer on `outcome`, so answer on **every** path including
-your own errors — otherwise the payer waits on a spinner. This is a Java-friendly interface too:
-implement `CardChargeHandler.onCardTokenized(card, outcome)`.
+your own errors — otherwise the payer waits on a spinner. Exactly one answer takes effect; later
+calls are ignored. This is a Java-friendly interface too: implement
+`CardChargeHandler.onCardTokenized(card, outcome)`.
+
+### 3-D Secure
+
+Where the issuer supports it, the challenge is drawn **in your app** instead of in a web page. That
+costs you one thing: **a payment may take two charges.**
+
+- Send `card.secure?.referenceId` with your charge, as `reference_id`. Without it the gateway cannot
+  offer the in-app challenge for that payment, and the payer gets the web page.
+- Answer with `chargeResponse(...)`. When the response asks for a challenge, the SDK runs it.
+- **Your handler is then called a second time**, with `card.secure?.secureToken` and
+  `card.secure?.chargeId` set. Charge again, sending those as `secure_token` and `charge_id`, and
+  answer the same way.
+
+`card.secure` is `null` on a payment with no 3-D Secure session, and a challenge shown in a web page
+never asks you for a second charge.
 
 Offering `BRICK` without registering a handler is reported as
 `PaymentResult.Failed(reason = INVALID_REQUEST)` rather than failing silently.
@@ -235,6 +261,67 @@ an error screen of its own, so if you handle only `Success` the sheet appears to
 
 ---
 
+## Optional: the widget code
+
+A **widget** decides which set of methods the hosted local-payments checkout offers. Its code, e.g.
+`pw_1`, is on your project's Widgets page in the Paymentwall merchant area.
+
+```kotlin
+.widget("pw_1")
+```
+
+**Most integrations should leave it out.** Omit it and Paymentwall offers whatever the project is
+configured to offer, so the method list becomes something you change in the merchant area rather
+than in an app release. Set it when one app pays through more than one widget — a different mix per
+storefront, country or price point.
+
+A widget code belongs to exactly one project, so it travels with the project key it was created
+under: change one and you change both.
+
+⚠️ **On a project with no default configured**, omitting the widget produces a page saying the
+payment method is not available in the payer's country. That is a message about the missing
+parameter, not about the payer. Confirm your project offers something before leaving this out.
+
+---
+
+## Optional: two projects in one app
+
+One app can pay against more than one Paymentwall project — cards on one, local payments on another.
+
+```kotlin
+PaymentRequest.Builder(LOCAL_PROJECT_KEY)
+    .secretKey(LOCAL_SECRET_KEY)
+    .projectKey(PaymentMethodId.BRICK, CARD_PROJECT_PUBLIC_KEY)
+```
+
+A method with no entry uses the key the builder was constructed with, so an app with a single
+project needs none of this.
+
+**There is no per-method secret key.** Only the hosted local-payments checkout signs on the device,
+so `.secretKey(...)` already belongs to that method alone.
+
+> **A card project shows two keys in the merchant area, and only the public one belongs in the
+> app.** The private key creates the charge, and that happens on your server — see Step 5. Anything
+> compiled into an app can be read out of it.
+
+---
+
+## Optional: your own success screen
+
+```kotlin
+.showSuccessScreen(false)
+```
+
+This changes **when** you are told, not **whether**. Your result callback still fires exactly once
+with the same `PaymentResult` — it simply arrives seconds earlier, while your app is back on screen,
+so you can draw your own confirmation from there.
+
+It does not affect the progress indicator or the failure screen. A payer who has just handed over
+card details still needs to see that something is happening, and still needs to be told when it did
+not work.
+
+---
+
 ## Optional: item image
 
 Shown beside the item name on the payment screen.
@@ -254,8 +341,9 @@ Anything you add is echoed to your server's pingback:
 
 ```kotlin
 .customParameter("campaign", "spring_sale")
-.customParameter("widget", "p1_1")
 ```
+
+The widget code is **not** one of these — it has its own setter, `.widget(code)`.
 
 ---
 
