@@ -142,4 +142,4 @@ from `google()` and `mavenCentral()` only.
 
 ## Support
 
-Questions and integration help: [support@paymentwall.com](mailto:support@paymentwall.com)
+Questions and integration help: [support@paymentwall.com](mailto:support@paymentwall.com) 
